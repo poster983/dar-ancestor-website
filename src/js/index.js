@@ -1,6 +1,7 @@
 import "@material/mwc-top-app-bar";
 import "./elements/ancestor-state-bar";
 import "./elements/ancestor-section"
+import css from "../styles/index.css"
 
 let ScrollMagic = require("scrollmagic");
 let scroll = new ScrollMagic.Controller();
