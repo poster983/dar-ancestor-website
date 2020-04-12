@@ -1,0 +1,10 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+ancestor-state-bar {
+    --ancestor-state-bar-background-color:red;
+    width: 100% !important;
+}
