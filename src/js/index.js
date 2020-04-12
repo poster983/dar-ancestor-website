@@ -1,15 +1,20 @@
 import "@material/mwc-top-app-bar";
 import "./elements/ancestor-state-bar";
 import "./elements/ancestor-section"
-import css from "../styles/index.css"
+import "../styles/index.css";
+import {default as config} from "../../ancestor-config.json";
+import {build} from "./build";
+console.log(config)
 
 let ScrollMagic = require("scrollmagic");
 let scroll = new ScrollMagic.Controller();
 
+build(document.getElementById("sections"), scroll);
+
 let section1 = document.getElementById("section1");
 
 section1.names = ["joseph", "hassell", "hello there", "jsdafkl;jklfds", "jdskfahkhfsjakldf", "djksafhjkdsfhlfhdsl", "dsfhjkahflhfsdfkj"];
-section1.scrollController = scroll;
+//section1.scrollController = scroll;
 
 document.getElementById("section2").names = ["jsdafkl;jklfds", "jdskfahkhfsjakldf", "djksafhjkdsfhlfhdsl", "dsfhjkahflhfsdfkj"];
 

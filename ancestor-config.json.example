@@ -1,3 +1,30 @@
 //This is an example json file.  
 //To use this program you must copy a file with the structure below into the root directory and name it: ancestor-config.json
+//Do not include these comments
+{
+    "mainSite": "http Url",
+    "navBarColor": "#82ccdd",
+    "states": [{
+            "state": "Texas",
+            "ancestors": [
+                "afsffsdafsdf",
+                "dgfsgdfs",
+                "dsfg s gdgf dsfg ",
+                "hdsgfdg  dfsgasd",
+                "hsdfdf gfad gdsf"
 
+            ],
+            "color": "#ebc10f",
+            "textColor": "yellow",
+            "sidePhotos": [{
+                    "src": "link1",
+                    "attribution": "From Find a grave.com"
+                },
+                "link2",
+                "link3",
+                "linkn"
+            ],
+            "backgroundPhoto": "link"
+        }
+    ]
+}
