@@ -10,7 +10,8 @@ import anime from "animejs";
 import simpleParallax from 'simple-parallax-js';
 import "./ancestor-state-bar"
 
-let ScrollMagic = require("scrollmagic");
+//let ScrollMagic = require("scrollmagic");
+
 
 
 export class AncestorSection extends LitElement {
@@ -20,6 +21,7 @@ export class AncestorSection extends LitElement {
         return css `
           :host {
             width: 100%;
+            height: auto;
           }
           #background {
             background-size: cover;
@@ -66,7 +68,7 @@ export class AncestorSection extends LitElement {
         //Paralax animations
 
         window.addEventListener('resize', () => this._resize());
-
+        this.height = 1;
 
 
         this.firstUpdated = () => {
@@ -80,10 +82,14 @@ export class AncestorSection extends LitElement {
                 scale: 3,
                 //customContainer: container
             });
-
-            requestAnimationFrame(() => {
+            
+            setTimeout(() => {
                 this._resize();
             });
+            /*
+            requestAnimationFrame(() => {
+                this._resize();
+            });*/
             
             
 
@@ -92,9 +98,8 @@ export class AncestorSection extends LitElement {
     }
 
     _resize() {
-        if(this.paralaxControl) {
-            this.paralaxControl.destroy();
-        }
+        this.height = this.shadowRoot.getElementById('paralax').offsetHeight;
+
         let background = this.shadowRoot.getElementById('background');
         let names = this.shadowRoot.getElementById('names');
         console.log(names.offsetHeight);

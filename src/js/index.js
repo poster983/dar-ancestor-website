@@ -4,9 +4,10 @@ import "./elements/ancestor-section"
 import "../styles/index.css";
 import {default as config} from "../../ancestor-config.json";
 import {build} from "./build";
+import ScrollMagic from 'scrollmagic';
 console.log(config)
 
-let ScrollMagic = require("scrollmagic");
+//let ScrollMagic = require("scrollmagic");
 let scroll = new ScrollMagic.Controller();
 
 build(document.getElementById("sections"), scroll);
