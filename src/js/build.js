@@ -20,33 +20,50 @@ export function build(container, scrollControl) {
         bar.state = state.state;
         bar.style.setProperty("--ancestor-state-bar-background-color", state.color);
 
+        //create state bar container
+        let barContainer = document.createElement("div");
+        barContainer.appendChild(bar);
+        barContainer.style.zIndex = 3;
+        barContainer.style.width = "100%";
+        barContainer.classList.add("fix-bar");
 
         // create ancestor section
         let section = document.createElement("ancestor-section");
         section.names = state.ancestors;
         section.background = "./src/img/testbg2.jpg";
 
-        console.log(section.clientHeight)
+
+        
         
         
         
         //push to dom
-        container.appendChild(bar);
+        container.appendChild(barContainer);
         container.appendChild(section);
 
-
         //add bar to scrollcontrol
-        new ScrollMagic.Scene({
-            duration: 571-64, //() => getDuration(section), 
-            triggerElement: bar,
+        let scene = new ScrollMagic.Scene({
+            duration: () => getDuration(section), //571-64, // 
+            triggerElement: barContainer,
             triggerHook: 'onLeave',
         })  
             .addIndicators()
-            .setPin(bar, {pushFollowers: true}) // pins the element for the the scene's duration
+            .setPin(barContainer, {pushFollowers: false}) // pins the element for the the scene's duration
             .addTo(scrollControl); // assign the scene to the controller
         
+        //FixScrollMagicJumpingPin(scene, bar);
 
+        barContainer.style.setProperty("position", "relative");
     }
+    //fix fixed bug
+    setTimeout(()=> {
+        let bars = document.getElementsByClassName("fix-bar");
+    for (const element of bars) {
+        //console.log(element);
+        element.style.setProperty("position", "relative");
+        //console.log(element);
+      }
+    }, 100)
     
 }
 
@@ -57,7 +74,7 @@ export function build(container, scrollControl) {
  */
 function getDuration(section) {
     //console.log(section.offsetHeight)
-    return section.height-64;
+    return section.height;
 
 }
 //export default {build};

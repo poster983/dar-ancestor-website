@@ -34,11 +34,20 @@ new ScrollMagic.Scene({
 
 
 new ScrollMagic.Scene({
-	duration: "200%", // the scene should last for a scroll distance of 100px
+	duration: "20%", // the scene should last for a scroll distance of 100px
+	//offset: "-50%", // start this scene after scrolling for 50px
+	triggerElement: '.sticky-container',
+	triggerHook: 'onLeave',
+})
+	.setPin('.sticky-container', {pushFollowers: false}) // pins the element for the the scene's duration
+	.addTo(scroll); // assign the scene to the controller
+
+new ScrollMagic.Scene({
+	duration: "20%", // the scene should last for a scroll distance of 100px
 	//offset: "-50%", // start this scene after scrolling for 50px
 	triggerElement: '#bar',
 	triggerHook: 'onLeave',
 })
-	.setPin('#bar') // pins the element for the the scene's duration
+	.setPin('#bar', {pushFollowers: false}) // pins the element for the the scene's duration
 	.addTo(scroll); // assign the scene to the controller
 	

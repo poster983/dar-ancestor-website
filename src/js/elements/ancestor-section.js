@@ -34,9 +34,13 @@ export class AncestorSection extends LitElement {
             z-index: -1;
           }
           ancestor-names {
-            display: inline-block;
+            /*display: inline-block;*/
             z-index: 1;
-            position: absolute;
+           /* position: absolute;*/
+          }
+          #paralax {
+              margin: 0px;
+              background-color: #212121;
           }
         `;
     }
@@ -68,28 +72,19 @@ export class AncestorSection extends LitElement {
         //Paralax animations
 
         window.addEventListener('resize', () => this._resize());
-        this.height = 1;
+        this.height = 100;
 
 
         this.firstUpdated = () => {
             
-
-
-            let background = this.shadowRoot.getElementById('background');
-            //let container = this.shadowRoot.getElementById('paralax');
-            //background.style.height = 
-            new simpleParallax(background, {
-                scale: 3,
-                //customContainer: container
-            });
             
             setTimeout(() => {
                 this._resize();
             });
-            /*
+            
             requestAnimationFrame(() => {
                 this._resize();
-            });*/
+            });
             
             
 
@@ -102,7 +97,7 @@ export class AncestorSection extends LitElement {
 
         let background = this.shadowRoot.getElementById('background');
         let names = this.shadowRoot.getElementById('names');
-        console.log(names.offsetHeight);
+        //console.log(names.offsetHeight);
         background.style.height = names.offsetHeight;
 
         /*this.paralaxControl = new simpleParallax(background, {
@@ -120,10 +115,10 @@ export class AncestorSection extends LitElement {
          */
         return html `
         <div id="paralax">
-            
+            <br>
             <ancestor-names id="names" style="color: white;" .names="${this.names}"></ancestor-names>
-            <img  id="background" src="${this.background}" >
-            
+            <!--<img  id="background" src="${this.background}" >-->
+            <br>
         </div>
 
         
