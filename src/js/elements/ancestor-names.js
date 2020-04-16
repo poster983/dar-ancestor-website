@@ -10,7 +10,8 @@ import {
             
           }*/
           p {
-              font-size: 20px;
+              font-size: 1.10rem;
+              font-family: 'Roboto', sans-serif;
           }
         `;
       }

@@ -35,8 +35,9 @@ export class AncestorSection extends LitElement {
           }
           ancestor-names {
             /*display: inline-block;*/
+            
             z-index: 1;
-           /* position: absolute;*/
+            color: white;
           }
           #paralax {
               margin: 0px;
@@ -95,10 +96,9 @@ export class AncestorSection extends LitElement {
     _resize() {
         this.height = this.shadowRoot.getElementById('paralax').offsetHeight;
 
-        let background = this.shadowRoot.getElementById('background');
-        let names = this.shadowRoot.getElementById('names');
+        /*let background = this.shadowRoot.getElementById('background');
+        let names = this.shadowRoot.getElementById('names');*/
         //console.log(names.offsetHeight);
-        background.style.height = names.offsetHeight;
 
         /*this.paralaxControl = new simpleParallax(background, {
             scale: 2,
@@ -116,7 +116,7 @@ export class AncestorSection extends LitElement {
         return html `
         <div id="paralax">
             <br>
-            <ancestor-names id="names" style="color: white;" .names="${this.names}"></ancestor-names>
+            <ancestor-names id="names" .names="${this.names}"></ancestor-names>
             <!--<img  id="background" src="${this.background}" >-->
             <br>
         </div>
