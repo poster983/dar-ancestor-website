@@ -1,100 +1,37 @@
 <html>
-    <head>
-        <title>Our Ancestors!</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap" rel="stylesheet">
-        <link href="./dist/ancestors.bundle.css" rel="stylesheet">
-        
-    </head>
 
-    <body>
-        <mwc-top-app-bar>
+<head>
+    <title>Our Ancestors!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap" rel="stylesheet">
+    <link href="./dist/ancestors.bundle.css" rel="stylesheet">
+
+</head>
+
+<body class="loading">
+    <div id="pre-loader" class="pre-loader">
+        <div class="gooey">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <main id="main" class="loading">
+        <mwc-top-app-bar id="masthead">
             <div slot="title">Our Ancestors</div>
         </mwc-top-app-bar>
+    
         <div class="sections" id="sections"></div>
-        <ancestor-section id="section1" state="Texas" background="./src/img/testbg.jpg"></ancestor-section>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <ancestor-section id="section2" state="California" background="./src/img/testbg.jpg"></ancestor-section>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <div class="sticky-container" id="statetest">
-            <ancestor-state-bar></ancestor-state-bar>
-        </div>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1 id="hold"> TEST HOLD </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1><h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <ancestor-state-bar id="bar"></ancestor-state-bar>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
+    </main>
+    
 
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
-        <h1> TEST </h1>
+    <script src="./dist/ancestors.bundle.js"></script>
+</body>
 
-
-        <script src="./dist/ancestors.bundle.js"></script>
-    </body>
 </html>

@@ -6,6 +6,7 @@ body {
     margin: 0px;
     padding: 0px;
     background-color: #212121;
+    transition: background-color 0.5s;
 }
 
 
@@ -13,13 +14,3 @@ ancestor-state-bar {
     --ancestor-state-bar-background-color:red;
     width: 100% !important;
 }
-
-/*1.sections {
-    position: fixed;
-    overflow: scroll;
-}*/
-
-/*div.sticky-container {
-    width: 100%;
-    height: auto;
-  }*/
