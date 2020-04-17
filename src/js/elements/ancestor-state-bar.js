@@ -47,19 +47,20 @@ import * as common from "../common";
             -webkit-font-smoothing: antialiased;
             font-family: 'IM Fell English', serif;
           }
+          .flag-conatiner {
+            padding-left: 25px;
+          }
+          #flag {
+            max-height: 50px;
+            width: auto;
+            border-radius: 10px;
+          }
           
         `;
       }
 
     constructor() {
       super();
-
-      /*setTimeout(() => {
-          this._resize();
-      });*/
-      
-      
-      
       this.firstUpdated = () => {
         this._updateTextColor();
         /*requestAnimationFrame(() => {
@@ -78,12 +79,20 @@ import * as common from "../common";
     }
 
     _updateTextColor() {
+      //get color
       let bar = this.shadowRoot.getElementById("bar");
       let bgColor = window.getComputedStyle(bar).backgroundColor;
-      let textColor = common.getTextColor(common.parseRGBHEX(bgColor));
+      let textColor = common.getTextColor(common.parseRGBHEX(bgColor));//set title color
       let title = this.shadowRoot.getElementById("title");
       title.style.color = textColor;
 
+      //change flag outline
+      let flag = this.shadowRoot.getElementById("flag");
+      if(flag) {
+        flag.style.setProperty("border", `3px solid ${textColor}`);
+      }
+      
+      
     }
   
     /**
@@ -100,16 +109,16 @@ import * as common from "../common";
      * Implement `render` to define a template for your element.
      */
     render(){
-      /**
-       * Use JavaScript expressions to include property values in
-       * the element template.
-       */
+
       return html`
 
       <div id="bar" class="bar">
         <div class="v-center">
           ${this.flagSrc? html`
-            <div id="flag" style='background-image: url(${this.flagSrc});'></div>
+            <div class="flag-conatiner">
+              <img id="flag" src="${this.flagSrc}">
+            
+            </div>
           `: html `<!--No Flag-->`
           }
            <div id="title" class="title">${this.state}</div>

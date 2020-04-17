@@ -18,6 +18,7 @@ export function build(container, scrollControl) {
             //style: `--ancestor-state-bar-background-color: ${state.color}`
         });
         bar.state = state.state;
+        bar.flagSrc = state.flagLink;
         bar.style.setProperty("--ancestor-state-bar-background-color", state.color);
 
         //create state bar container
