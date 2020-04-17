@@ -1,5 +1,6 @@
 //This is an example json file.  
 //To use this program you must copy a file with the structure below into the root directory and name it: ancestor-config.json
+//You also may want to make an images folder to house the images linked here.
 //Do not include these comments
 {
     "mainSite": "http Url",

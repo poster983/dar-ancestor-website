@@ -2,6 +2,7 @@ import {
     LitElement, html, customElement, property, css
   } from 'lit-element';
   
+import * as common from "../common";
   /**
    * 
    */
@@ -29,17 +30,18 @@ import {
             height: 100%;
             position: relative;
           }
-
           @media (max-width: 600px) {
             .title {
               font-size: 2rem; 
             }
           } 
+
           @media (min-width: 600px) {
-            .title {
-              font-size: 1.25rem;
+              .title {
+                font-size: 1.5rem;
+              }
             }
-          }
+          
           .title {
             padding-left: 25px;
             -webkit-font-smoothing: antialiased;
@@ -48,13 +50,49 @@ import {
           
         `;
       }
+
+    constructor() {
+      super();
+
+      /*setTimeout(() => {
+          this._resize();
+      });*/
+      
+      
+      
+      this.firstUpdated = () => {
+        this._updateTextColor();
+        /*requestAnimationFrame(() => {
+          
+        });*/
+        //add class change observer
+        let observer = new MutationObserver((mutations) => {
+          mutations.forEach((mutationRecord) => {
+              console.log('style changed!');
+              this._updateTextColor();
+          });    
+        });
+        observer.observe(this, { attributes : true, attributeFilter : ['style', "class"] });
+      }
+
+    }
+
+    _updateTextColor() {
+      let bar = this.shadowRoot.getElementById("bar");
+      let bgColor = window.getComputedStyle(bar).backgroundColor;
+      let textColor = common.getTextColor(common.parseRGBHEX(bgColor));
+      let title = this.shadowRoot.getElementById("title");
+      title.style.color = textColor;
+
+    }
   
     /**
      * Create an observed property. Triggers update on change.
      */
     static get properties() {
         return { 
-          state: { type: String }
+          state: { type: String },
+          flagSrc: {type: String}
         };
       }
   
@@ -67,11 +105,16 @@ import {
        * the element template.
        */
       return html`
-      
-      <div class="bar">
+
+      <div id="bar" class="bar">
         <div class="v-center">
-          <div class="flag"></div>
-          <div class="title">${this.state}</div>
+          ${this.flagSrc? html`
+            <div id="flag" style='background-image: url(${this.flagSrc});'></div>
+          `: html `<!--No Flag-->`
+          }
+           <div id="title" class="title">${this.state}</div>
+          
+         
         </div>
       </div>
       `;

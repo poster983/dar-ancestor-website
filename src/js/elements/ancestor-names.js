@@ -12,7 +12,10 @@ import {
           p {
               font-size: 1.10rem;
               font-family: 'Roboto', sans-serif;
+              flex: 1;
+              text-align: center;
           }
+          
         `;
       }
   
@@ -34,10 +37,11 @@ import {
        * the element template.
        */
       return html`
-      ${this.names != []? html`
-            ${this.names.map((i) => html`<p>${i}</p>`)}
-        `: html `<!--No names-->`
-        }
+     
+        ${this.names != []? html`
+              ${this.names.map((i) => html`<p>${i}</p>`)}
+          `: html `<!--No names-->`
+          }
       `;
     }
   }

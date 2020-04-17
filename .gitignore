@@ -92,3 +92,6 @@ dist/
 
 #config 
 ancestor-config.json
+
+#images folder 
+images/

@@ -23,25 +23,35 @@ export class AncestorSection extends LitElement {
             width: 100%;
             height: auto;
           }
-          #background {
-            background-size: cover;
-            /*width: inherit;*/
-            /*width: 100%;*/
-            /*height: 100%;*/
-            width: 100%;
-            height: auto;
-            overflow: hidden;
-            z-index: -1;
-          }
           ancestor-names {
             /*display: inline-block;*/
             
             z-index: 1;
             color: white;
           }
-          #paralax {
+          #container {
               margin: 0px;
               background-color: #212121;
+          }
+
+          .row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+            
+          }
+          
+          .column {
+            display: flex;
+            flex-direction: column;
+            flex-basis: 100%;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+          }
+          .column > * {
+            flex: 1;
           }
         `;
     }
@@ -94,7 +104,7 @@ export class AncestorSection extends LitElement {
     }
 
     _resize() {
-        this.height = this.shadowRoot.getElementById('paralax').offsetHeight;
+        this.height = this.shadowRoot.getElementById('container').offsetHeight;
 
         /*let background = this.shadowRoot.getElementById('background');
         let names = this.shadowRoot.getElementById('names');*/
@@ -114,11 +124,19 @@ export class AncestorSection extends LitElement {
          * the element template.
          */
         return html `
-        <div id="paralax">
-            <br>
-            <ancestor-names id="names" .names="${this.names}"></ancestor-names>
-            <!--<img  id="background" src="${this.background}" >-->
-            <br>
+        <div id="container">
+            <div class='row'>
+                    <ancestor-names id="names" class="column" .names="${this.names}"></ancestor-names>
+                <div class='column'>
+                <p> hi </p>
+                <p> hi </p>
+                <p> hi </p>
+                <p> hi </p>
+                <p> hi </p>
+                <p> hi </p>
+                </div>
+            </div>
+            
         </div>
 
         
