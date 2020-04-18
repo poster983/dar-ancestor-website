@@ -3,17 +3,20 @@ import "@material/mwc-icon-button";
 import "./elements/ancestor-state-bar";
 import "./elements/ancestor-section";
 import "./elements/ancestor-bottom-bar";
-import "./elements/ancestor-starfield";
 import "../styles/index.css";
 import "../styles/pre-loader.css"
 import {default as config} from "../../ancestor-config.json";
 import {build} from "./build";
+import {setupHero} from "./hero";
 import ScrollMagic from 'scrollmagic';
+
 import * as common from "./common";
 
 
 //let ScrollMagic = require("scrollmagic");
 let scroll = new ScrollMagic.Controller();
+//setup hero animations
+setupHero(scroll);
 
 //update last updated
 let bottomBar = document.getElementById("bottom-bar");
@@ -36,7 +39,7 @@ bottomBar.style.setProperty("--ancestor-bottom-bar-background-color", config.pri
 //build document
 build(document.getElementById("sections"), scroll);
 
-
+//Load Animation done
 function doneLoading() {
 	let body = document.body;
 	let main = document.getElementById("main");
@@ -53,15 +56,22 @@ function doneLoading() {
 	//let loader = 
 }
 
-window.addEventListener('load', function () {
-	doneLoading();
-
-  })
 
 
-  backButton.addEventListener("click", () => {
+//Back button navigation 
+backButton.addEventListener("click", () => {
 	console.log(window.history.length);
 	if(window.history.length >2) {
 		window.history.back();
 	}
 }, {passive: true})
+
+
+
+
+
+//call on load
+window.addEventListener('load', function () {
+	doneLoading();
+
+})

@@ -20,3 +20,22 @@ ancestor-starfield {
     width: 100%;
     height: 100%;
 }
+
+#starfield {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+}
+#hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-title {
+    -webkit-font-smoothing: antialiased;
+    font-family: 'IM Fell English', serif;
+}
+

@@ -1,13 +1,4 @@
-import {
-    LitElement, html, customElement, property, css
-  } from 'lit-element';
-
-
-
-
-import "particles.js";
-
-let config = {
+{
     "particles": {
         "number": {
           "value": 355,
@@ -116,54 +107,4 @@ let config = {
         }
       },
       "retina_detect": true
-    };
-
-
-export class AncestorStarfield extends LitElement {
-    static get styles() {
-        return css`
-          /*:host {
-            
-          }*/
-          
-          
-        `;
-      }
-      constructor() {
-          super();
-          console.log(particlesJS);
-          this.firstUpdated = () => {
-            
-            requestAnimationFrame(() => {
-                particlesJS.load(this.shadowRoot.getElementById("particle"), config);
-            
-            });
-        }
-          
-      }
-    /**
-     * Create an observed property. Triggers update on change.
-     */
-    static get properties() {
-        return { 
-          
-        };
-      }
-  
-    /**
-     * Implement `render` to define a template for your element.
-     */
-    render(){
-      /**
-       * Use JavaScript expressions to include property values in
-       * the element template.
-       */
-      return html`
-        <div id="particle"></div>
-        
-      `;
     }
-  }
-
-  customElements.define('ancestor-starfield', AncestorStarfield);
-
