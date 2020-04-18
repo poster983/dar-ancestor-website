@@ -3,6 +3,7 @@ import "@material/mwc-icon-button";
 import "./elements/ancestor-state-bar";
 import "./elements/ancestor-section";
 import "./elements/ancestor-bottom-bar";
+import "./elements/ancestor-starfield";
 import "../styles/index.css";
 import "../styles/pre-loader.css"
 import {default as config} from "../../ancestor-config.json";
