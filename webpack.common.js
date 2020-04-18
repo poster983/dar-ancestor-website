@@ -9,6 +9,7 @@ module.exports = {
   output: {
     
     filename: '[name].bundle.js',
+    publicPath: '/dist/',
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [new MiniCssExtractPlugin({

@@ -32,7 +32,6 @@ export function build(container, scrollControl) {
         let section = document.createElement("ancestor-section");
         section.names = state.ancestors;
         section.pictures = state.pictures;
-        section.background = "./src/img/testbg2.jpg";
 
 
         

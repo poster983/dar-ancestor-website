@@ -107,7 +107,7 @@ export class AncestorSection extends LitElement {
             setTimeout(() => {
                 this._resize();
                 //this._updateParalax();
-            }, 200);
+            }, 600);
             
             requestAnimationFrame(() => {
                 this._resize();
