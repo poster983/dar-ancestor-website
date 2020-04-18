@@ -55,6 +55,7 @@ function doneLoading() {
 
 window.addEventListener('load', function () {
 	doneLoading();
+
   })
 
 
