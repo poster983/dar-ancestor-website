@@ -21,7 +21,6 @@ bottomBar.lastUpdated = config.lastUpdated;
 // hide back button on nav 
 let backButton = document.getElementById("back-button");
 if(window.history.length<=2) {
-	console.log(backButton);
 	backButton.style.display = "none";
 	
 }

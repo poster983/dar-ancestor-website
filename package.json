@@ -7,7 +7,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "webpack"
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "dependencies": {
     "@material/mwc-icon-button": "^0.14.1",
@@ -21,6 +22,7 @@
     "scrollmagic": "^2.0.7",
     "simple-parallax-js": "^5.4.0",
     "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-merge": "^4.2.2"
   }
 }

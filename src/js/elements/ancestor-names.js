@@ -38,7 +38,7 @@ import {
        */
       return html`
      
-        ${this.names != []? html`
+        ${this.names != null? html`
               ${this.names.map((i) => html`<p>${i}</p>`)}
           `: html `<!--No names-->`
           }

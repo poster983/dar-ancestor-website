@@ -22,6 +22,7 @@ export class AncestorSection extends LitElement {
           :host {
             width: 100%;
             height: auto;
+            
           }
           ancestor-names {
             /*display: inline-block;*/
@@ -30,6 +31,8 @@ export class AncestorSection extends LitElement {
             color: white;
           }
           #container {
+              padding-left: 25px;
+              padding-right: 25px;
               margin: 0px;
               background-color: #212121;
           }
@@ -55,11 +58,13 @@ export class AncestorSection extends LitElement {
           }
 
           .pictures {
-              max-width: 100%;
+              max-width: 50%;
               height: auto;
               transform: translateX(-50%);
               left: 50%;
               position: relative;
+              border-radius: 10px;
+              border: 10px solid white
 
           }
           .picture-description {
@@ -161,7 +166,7 @@ export class AncestorSection extends LitElement {
             <div class='row'>
                     <ancestor-names id="names" class="column" .names="${this.names}"></ancestor-names>
                 <div class='column'>
-                    ${this.pictures != []? html`
+                    ${this.pictures != null? html`
                         ${this.pictures.map((i) => html`
                             <div>
                                 <img class="pictures" src='${i.src}'>
