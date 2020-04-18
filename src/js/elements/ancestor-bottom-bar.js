@@ -109,7 +109,7 @@ import * as common from "../common";
 
       <div id="bar" class="bar">
         <div class="v-center">
-            <a href="https://josephhassell.com" class="text" id="attribution">Created with ❤ by Joey</a>
+            <a href="https://josephhassell.com" class="text" id="attribution">Created with &#x2764; by Joey</a>
             <div id="updated" class="text">Last Updated: ${this.lastUpdated}</div>
           
          
