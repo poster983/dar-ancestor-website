@@ -20,6 +20,7 @@ import * as common from "../common";
             height: 64px;
             background-color: var(--ancestor-state-bar-background-color, red);
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
           }

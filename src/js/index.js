@@ -63,4 +63,4 @@ window.addEventListener('load', function () {
 	if(window.history.length >2) {
 		window.history.back();
 	}
-})
+}, {passive: true})
