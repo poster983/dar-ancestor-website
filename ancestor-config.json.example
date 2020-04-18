@@ -3,29 +3,54 @@
 //You also may want to make an images folder to house the images linked here.
 //Do not include these comments
 {
-    "mainSite": "http Url", 
-    "navBarColor": "#82ccdd",
+    "primaryColor": "#82ccdd",
+    "lastUpdated": "Some arbitrary date",
+    "analyticsScript":"",
     "states": [{
-            "state": "Texas",
+            "state": "Connecticut",
             "ancestors": [
-                "afsffsdafsdf",
-                "dgfsgdfs",
-                "dsfg s gdgf dsfg ",
-                "hdsgfdg  dfsgasd",
-                "hsdfdf gfad gdsf"
+                "Private William Abel",
+                "Asa Bronson, Civil & Patriotic Service",
+                "Capt. Jabez Deming",
+                "Capt. Elisha Fox",
+                "James Gould, Patriotic Service",
+                "Lt. William Henshaw",
+                "Pvt. Zalmon Hull",
+                "Capt. Samuel Hurd, Sr.",
+                "Private Hezekiah Lee",
+                "Corp. Absalom Miner",
+                "Private John Newton",
+                "Private Amasa Preston",
+                "Private Stephen Skiff, Litchfield Co."
 
             ],
-            "color": "#ebc10f",
-            "textColor": "yellow",
-            "sidePhotos": [{
-                    "src": "link1",
-                    "attribution": "From Find a grave.com"
-                },
-                "link2",
-                "link3",
-                "linkn"
+            "color": "rgb(30,55,153,0.5)",
+            "flagLink": "./images/Connecticut.png",
+            "pictures": [{
+                "src": "./images/sidePhotos/Connecticut - Giles Giddings.jpg",
+                "description": "Capt. Jabez Deming’s grandson, Giles Giddings, died at the Battle of San Jacinto.  His brothers came to Texas to claim his soldier’s land bounty and founded Giddings, Texas.                "
+            }, {
+                "src": "./images/Delaware.png",
+                "description": "From Find a grave.com"
+            }, {
+                "src": "./images/Connecticut.png",
+                "description": "From Find a grave.com"
+            }]
+        },
+        {
+            "state": "Delaware",
+            "ancestors": [
+                "Col. Thomas Rodney",
+                "Private Robert Cloud"
+
             ],
-            "backgroundPhoto": "link"
-        }
+            "color": "rgba(130, 204, 221, 0.5)",
+            "flagLink": "./images/Delaware.png",
+            "pictures": [{
+                    "src": "./images/sidePhotos/Delaware - Thomas Rodney.jpg",
+                    "description": "Col. Thomas Rodney, younger son of Caesar Rodney (Signer of the Declaration of Independence), served in the Continental Congress, and later was appointed U.S. Federal Judge to the Territory of Mississippi."
+                }
+            ]
+        },
     ]
 }
