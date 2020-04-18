@@ -10,6 +10,7 @@
     "build": "webpack"
   },
   "dependencies": {
+    "@material/mwc-icon-button": "^0.14.1",
     "@material/mwc-top-app-bar": "^0.14.1",
     "animejs": "^3.2.0",
     "css-loader": "^3.5.2",

@@ -6,8 +6,8 @@ import {
     css
 } from 'lit-element';
 import "./ancestor-names";
-import anime from "animejs";
-import simpleParallax from 'simple-parallax-js';
+//import anime from "animejs";
+//import simpleParallax from 'simple-parallax-js';
 import "./ancestor-state-bar"
 
 //let ScrollMagic = require("scrollmagic");
@@ -53,6 +53,19 @@ export class AncestorSection extends LitElement {
           .column > * {
             flex: 1;
           }
+
+          .pictures {
+              max-width: 100%;
+              height: auto;
+              transform: translateX(-50%);
+              left: 50%;
+              position: relative;
+
+          }
+          .picture-description {
+            text-align: center;
+            color: white;
+          }
         `;
     }
 
@@ -66,9 +79,6 @@ export class AncestorSection extends LitElement {
             },
             pictures: {
                 type: Array
-            },
-            background: {
-                type: String
             },
             //scrollController: {type: Object},
             // state: {type: String}
@@ -91,18 +101,39 @@ export class AncestorSection extends LitElement {
             
             setTimeout(() => {
                 this._resize();
-            });
+                //this._updateParalax();
+            }, 200);
             
             requestAnimationFrame(() => {
                 this._resize();
+                //this._updateParalax();
             });
             
             
 
         }
 
-    }
+        
 
+    }
+    /*updated(changedProperties) {
+        changedProperties.forEach((oldValue, propName) => {
+            if(propName == "pictures") {
+                this._updateParalax();
+            }
+            
+        });
+    }
+    _updateParalax() {
+        let pictures = this.shadowRoot.querySelectorAll(".pictures");
+        //console.log(pictures);
+        for(const elem of pictures) {
+            console.log(elem)
+            new simpleParallax(elem, {
+                //customContainer: container
+            });
+        }
+    }*/
     _resize() {
         this.height = this.shadowRoot.getElementById('container').offsetHeight;
 
@@ -124,22 +155,26 @@ export class AncestorSection extends LitElement {
          * the element template.
          */
         return html `
+        
         <div id="container">
+        <br>
             <div class='row'>
                     <ancestor-names id="names" class="column" .names="${this.names}"></ancestor-names>
                 <div class='column'>
-                <p> hi </p>
-                <p> hi </p>
-                <p> hi </p>
-                <p> hi </p>
-                <p> hi </p>
-                <p> hi </p>
+                    ${this.pictures != []? html`
+                        ${this.pictures.map((i) => html`
+                            <div>
+                                <img class="pictures" src='${i.src}'>
+                                <p class="picture-description">${i.description}</p>
+                            </div>
+                        `)}
+                    `: html `<!--No Pictures-->`
+                    }
                 </div>
             </div>
-            
+        <br>
         </div>
 
-        
         
       `;
     }

@@ -3,7 +3,7 @@
 //You also may want to make an images folder to house the images linked here.
 //Do not include these comments
 {
-    "mainSite": "http Url",
+    "mainSite": "http Url", 
     "navBarColor": "#82ccdd",
     "states": [{
             "state": "Texas",

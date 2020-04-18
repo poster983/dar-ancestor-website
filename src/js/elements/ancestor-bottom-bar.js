@@ -18,7 +18,7 @@ import * as common from "../common";
           .bar {
             width: 100%;
             height: 40px;
-            background-color: var(--ancestor-state-bar-background-color, red);
+            background-color: var(--ancestor-bottom-bar-background-color, red);
 
           }
           .v-center {
@@ -29,30 +29,33 @@ import * as common from "../common";
             position: relative;
           }
           @media (max-width: 600px) {
-            .title {
-              font-size: 0.5rem; 
+            .text {
+              font-size: 1rem; 
             }
           } 
 
           @media (min-width: 600px) {
-              .title {
-                font-size: 0.3rem;
+            .text {
+                font-size: 0.9rem;
               }
             }
           
-          .title {
-            padding-left: 25px;
+          #updated {
+            padding-right: 25px;
+            text-align: right;
+            right: 0px;
+            position: absolute;
+          }
+          .text {
             -webkit-font-smoothing: antialiased;
             font-family: 'Roboto', sans-serif;
           }
-          .flag-conatiner {
+          #attribution {
             padding-left: 25px;
+            text-align: left;
+            
           }
-          #flag {
-            max-height: 50px;
-            width: auto;
-            border-radius: 10px;
-          }
+          
           
         `;
       }
@@ -79,11 +82,13 @@ import * as common from "../common";
     _updateTextColor() {
       //get color
       let bar = this.shadowRoot.getElementById("bar");
+      let attribution = this.shadowRoot.getElementById("attribution");
       let bgColor = window.getComputedStyle(bar).backgroundColor;
       let textColor = common.getTextColor(common.parseRGBHEX(bgColor));//set title color
-      let updated = this.shadowRoot.getElementById("updated");
-      updated.style.color = textColor;
       
+        console.log(textColor)
+        bar.style.color = textColor;
+        attribution.style.color = textColor;
     }
   
     /**
@@ -104,8 +109,8 @@ import * as common from "../common";
 
       <div id="bar" class="bar">
         <div class="v-center">
-            <div>Created with ❤ by Joey</div>
-            <div id="updated" class="updated">${this.lastUpdated}</div>
+            <a href="https://josephhassell.com" class="text" id="attribution">Created with ❤ by Joey</a>
+            <div id="updated" class="text">Last Updated: ${this.lastUpdated}</div>
           
          
         </div>
