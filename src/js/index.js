@@ -21,7 +21,7 @@ bottomBar.lastUpdated = config.lastUpdated;
 
 // hide back button on nav 
 let backButton = document.getElementById("back-button");
-if(window.history.length<=2) {
+if(window.history.length<=1 && (config.home == null || config.home == "")) {
 	backButton.style.display = "none";
 	
 }
@@ -61,7 +61,9 @@ window.addEventListener('load', function () {
 
   backButton.addEventListener("click", () => {
 	console.log(window.history.length);
-	if(window.history.length >2) {
+	if(window.history.length >1) {
 		window.history.back();
+	} else {
+		window.location.href = config.home;
 	}
 }, {passive: true})
