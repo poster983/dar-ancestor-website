@@ -22,9 +22,10 @@ ancestor-starfield {
 }
 
 #starfield {
-    height: 100vh;
+    height: 150vh;
     width: 100%;
     position: absolute;
+    z-index: -1;
 }
 #hero {
     height: 100vh;
@@ -37,5 +38,7 @@ ancestor-starfield {
 .hero-title {
     -webkit-font-smoothing: antialiased;
     font-family: 'IM Fell English', serif;
+    color: white;
+    transform: translateY(-40%);
 }
 
