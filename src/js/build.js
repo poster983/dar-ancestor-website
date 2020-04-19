@@ -1,6 +1,6 @@
 import {default as config} from "../../ancestor-config.json"
 import ScrollMagic from 'scrollmagic';
-//import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
+import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
 
 
 /**
@@ -48,7 +48,7 @@ export function build(container, scrollControl) {
             triggerElement: barContainer,
             triggerHook: 'onLeave',
         })  
-            //.addIndicators()
+            .addIndicators()
             .setPin(barContainer, {pushFollowers: false}) // pins the element for the the scene's duration
             .addTo(scrollControl); // assign the scene to the controller
         

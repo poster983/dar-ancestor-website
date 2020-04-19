@@ -18,7 +18,7 @@ let paralaxTitles = {
 }
 let paralaxStarfield = {
     targets: '#starfield',
-    scale: "1.2",
+    //scale: "1.2",
     translateY: "-6vh",
     
     easing: 'linear',
