@@ -14,7 +14,7 @@ let masthead = document.getElementById("masthead");
 let paralaxTitles = {
     targets: '#hero-title',
     translateY: ["-20vh","15vh"],
-    
+    round: 10,
     easing: 'linear',
     direction: 'normal'
 }
@@ -22,7 +22,7 @@ let paralaxStarfield = {
     targets: '#starfield',
     //scale: "1.2",
     translateY: "-6vh",
-    
+    round: 10,
     easing: 'linear',
     direction: 'normal'
 }
@@ -33,6 +33,7 @@ let mastheadColor = { //
     alpha: ["0", "1"],
     easing: 'linear',
     direction: 'normal',
+    round: 10,
     update: function() {
         //console.log(mastheadColorObj.toRGBA());
         masthead.style.setProperty("--mdc-theme-primary", mastheadColorObj.toRGBA());
@@ -49,6 +50,7 @@ let mastheadTextColor = {
     green: mastheadTextColorTo.green,
     blue: mastheadTextColorTo.blue,
     easing: 'linear',
+    round: 10,
     direction: 'normal',
     update: function() {
         //console.log(mastheadTextColorBase.toRGBA());
@@ -60,7 +62,6 @@ var heroTimeline = anime.timeline({
 });
 
 heroTimeline.add(paralaxTitles).add(paralaxStarfield,0).add(mastheadColor,0).add(mastheadTextColor,0);
-
 
 // setup the hero titles
 let heroTitle = document.getElementById("hero-title");
