@@ -31,10 +31,13 @@ if(window.history.length<=2) {
 
 //update nav colors
 let masthead = document.getElementById("masthead");
+masthead.style.setProperty("--mdc-theme-primary", "rgba(0,0,0,0)");
+masthead.style.setProperty("--mdc-theme-on-primary", "rgba(255,255,255,1)");
+/*
 masthead.style.setProperty("--mdc-theme-primary", config.primaryColor);
-masthead.style.setProperty("--mdc-theme-on-primary", common.getTextColor(common.parseRGBHEX(config.primaryColor)));
+masthead.style.setProperty("--mdc-theme-on-primary", common.getTextColor(common.parseRGBHEX(config.primaryColor)));*/
 
-bottomBar.style.setProperty("--ancestor-bottom-bar-background-color", config.primaryColor)
+bottomBar.style.setProperty("--ancestor-bottom-bar-background-color", config.primaryColor);
 
 //build document
 build(document.getElementById("sections"), scroll);

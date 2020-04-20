@@ -4,6 +4,8 @@ console.log(particlesConfig);
 import ScrollMagic from 'scrollmagic';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
 import anime from "animejs";
+import {default as config} from "../../ancestor-config.json";
+import * as common from "./common";
 
 
 let masthead = document.getElementById("masthead");
@@ -24,19 +26,45 @@ let paralaxStarfield = {
     easing: 'linear',
     direction: 'normal'
 }
+let mastheadColorObj = common.parseRGBHEX(config.primaryColor);
 
+let mastheadColor = { //
+    targets: mastheadColorObj,
+    alpha: ["0", "1"],
+    easing: 'linear',
+    direction: 'normal',
+    update: function() {
+        //console.log(mastheadColorObj.toRGBA());
+        masthead.style.setProperty("--mdc-theme-primary", mastheadColorObj.toRGBA());
+    }
+}
+
+//set masthead text color
+let mastheadTextColorBase = new common.Color(255,255,255,1);// base color 
+let mastheadTextColorTo = common.parseRGBHEX(common.getTextColor(common.parseRGBHEX(config.primaryColor))); // get text color when primary;
+
+let mastheadTextColor = {
+    targets: mastheadTextColorBase,
+    red: mastheadTextColorTo.red,
+    green: mastheadTextColorTo.green,
+    blue: mastheadTextColorTo.blue,
+    easing: 'linear',
+    direction: 'normal',
+    update: function() {
+        //console.log(mastheadTextColorBase.toRGBA());
+        masthead.style.setProperty("--mdc-theme-on-primary", mastheadTextColorBase.toRGBA());
+    }
+}
 var heroTimeline = anime.timeline({
     autoplay: false,
-    begin: function(anim) {
-        console.log('began : ' + anim.began);
-      },
-    complete: function(anim) {
-        console.log('completed : ' + anim.completed);
-    }
 });
 
-heroTimeline.add(paralaxTitles).add(paralaxStarfield,0);
+heroTimeline.add(paralaxTitles).add(paralaxStarfield,0).add(mastheadColor,0).add(mastheadTextColor,0);
 
+
+// setup the hero titles
+let heroTitle = document.getElementById("hero-title");
+heroTitle.innerHTML = config.title;
 
 
 export function setupHero(scrollControl) {
