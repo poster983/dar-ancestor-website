@@ -66,6 +66,9 @@ heroTimeline.add(paralaxTitles).add(paralaxStarfield,0).add(mastheadColor,0).add
 let heroTitle = document.getElementById("hero-title");
 heroTitle.innerHTML = config.title;
 
+let heroSub = document.getElementById("hero-sub");
+heroSub.innerHTML = (config.subtitle)?config.subtitle:"";
+
 
 export function setupHero(scrollControl) {
     //starfield

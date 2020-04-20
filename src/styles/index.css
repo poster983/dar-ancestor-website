@@ -1,5 +1,6 @@
 html {
     font-size: 1em;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -63,6 +64,7 @@ ancestor-starfield {
     font-family: 'IM Fell English', serif;
     color: white;
     transform: translateY(-40%);
+    text-align: center;
 }
 
 .hero-sub {
