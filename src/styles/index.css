@@ -1,22 +1,97 @@
-html { 
-    font-size: 1em; 
-  } 
+html {
+    font-size: 1em;
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0px;
     padding: 0px;
     background-color: #212121;
+    
     transition: background-color 0.5s;
     overflow-x: hidden;
 }
 
 
 ancestor-state-bar {
-    --ancestor-state-bar-background-color:red;
+    --ancestor-state-bar-background-color: red;
     width: 100% !important;
 }
 
 ancestor-starfield {
     width: 100%;
     height: 100%;
+}
+
+#starfield {
+    height: 150vh;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+#hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/** hero title media sizes */
+/**phones*/
+@media (max-width: 600px) { 
+    .hero-title { 
+        font-size: 2.6rem;
+    }
+    .hero-sub {
+        font-size: 1rem;
+    }
+}
+/**computer*/
+@media (min-width: 600px) {
+    .hero-title { 
+        font-size: 4rem;
+    }
+    .hero-sub {
+        font-size: 1.5rem;
+    }
+}
+
+.hero-title {
+    -webkit-font-smoothing: antialiased;
+    font-family: 'IM Fell English', serif;
+    color: white;
+    transform: translateY(-40%);
+    text-align: center;
+}
+
+.hero-sub {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: white;
+}
+
+#hero-trigger {
+    position: absolute;
+    top: 50vh;
+}
+
+#scroll-indicator {
+    position: absolute;
+    bottom: 10px;
+    color: white;
+}
+
+#hero-bg {
+    position: absolute;
+    height: 100vh;
+    top: 0px;
+    width: 100%;
+    background: rgb(49,19,102);
+    background: linear-gradient(176deg, rgba(49,19,102,1) 23%, rgba(33,33,33,1) 54%);
+    z-index: -2;
 }

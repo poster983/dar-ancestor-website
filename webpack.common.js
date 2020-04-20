@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
-    ancestors: './src/js/index.js',
+    ancestors: './src/js/index.js'
   },
 
   output: {

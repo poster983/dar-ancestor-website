@@ -3,17 +3,20 @@ import "@material/mwc-icon-button";
 import "./elements/ancestor-state-bar";
 import "./elements/ancestor-section";
 import "./elements/ancestor-bottom-bar";
-import "./elements/ancestor-starfield";
 import "../styles/index.css";
 import "../styles/pre-loader.css"
 import {default as config} from "../../ancestor-config.json";
 import {build} from "./build";
+import {setupHero} from "./hero";
 import ScrollMagic from 'scrollmagic';
+
 import * as common from "./common";
 
 
 //let ScrollMagic = require("scrollmagic");
 let scroll = new ScrollMagic.Controller();
+//setup hero animations
+setupHero(scroll);
 
 //update last updated
 let bottomBar = document.getElementById("bottom-bar");
@@ -28,15 +31,18 @@ if(window.history.length<=1 && (config.home == null || config.home == "")) {
 
 //update nav colors
 let masthead = document.getElementById("masthead");
+masthead.style.setProperty("--mdc-theme-primary", "rgba(0,0,0,0)");
+masthead.style.setProperty("--mdc-theme-on-primary", "rgba(255,255,255,1)");
+/*
 masthead.style.setProperty("--mdc-theme-primary", config.primaryColor);
-masthead.style.setProperty("--mdc-theme-on-primary", common.getTextColor(common.parseRGBHEX(config.primaryColor)));
+masthead.style.setProperty("--mdc-theme-on-primary", common.getTextColor(common.parseRGBHEX(config.primaryColor)));*/
 
-bottomBar.style.setProperty("--ancestor-bottom-bar-background-color", config.primaryColor)
+bottomBar.style.setProperty("--ancestor-bottom-bar-background-color", config.primaryColor);
 
 //build document
 build(document.getElementById("sections"), scroll);
 
-
+//Load Animation done
 function doneLoading() {
 	let body = document.body;
 	let main = document.getElementById("main");
@@ -53,13 +59,10 @@ function doneLoading() {
 	//let loader = 
 }
 
-window.addEventListener('load', function () {
-	doneLoading();
-
-  })
 
 
-  backButton.addEventListener("click", () => {
+//Back button navigation 
+backButton.addEventListener("click", () => {
 	console.log(window.history.length);
 	if(window.history.length >1) {
 		window.history.back();
@@ -67,3 +70,13 @@ window.addEventListener('load', function () {
 		window.location.href = config.home;
 	}
 }, {passive: true})
+
+
+
+
+
+//call on load
+window.addEventListener('load', function () {
+	doneLoading();
+
+})

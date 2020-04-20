@@ -86,7 +86,7 @@ import * as common from "../common";
       let bgColor = window.getComputedStyle(bar).backgroundColor;
       let textColor = common.getTextColor(common.parseRGBHEX(bgColor));//set title color
       
-        console.log(textColor)
+        //console.log(textColor)
         bar.style.color = textColor;
         attribution.style.color = textColor;
     }

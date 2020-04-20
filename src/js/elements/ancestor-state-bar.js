@@ -70,7 +70,7 @@ import * as common from "../common";
         //add class change observer
         let observer = new MutationObserver((mutations) => {
           mutations.forEach((mutationRecord) => {
-              console.log('style changed!');
+              //console.log('style changed!');
               this._updateTextColor();
           });    
         });
