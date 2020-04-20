@@ -7,7 +7,6 @@ import {
 } from 'lit-element';
 import "./ancestor-names";
 //import anime from "animejs";
-//import simpleParallax from 'simple-parallax-js';
 import "./ancestor-state-bar"
 
 //let ScrollMagic = require("scrollmagic");
