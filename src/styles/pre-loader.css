@@ -12,7 +12,7 @@ main.loading {
 }
 .pre-loader .unsupported {
     opacity: 0;
-    animation: unsupported-fadein 0.5s linear 6s forwards;
+    animation: unsupported-fadein 0.5s linear 8s forwards;
     color: white;
     top: 60%;
     position: absolute;
