@@ -65,6 +65,8 @@ ancestor-starfield {
     color: white;
     transform: translateY(-40%);
     text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
     will-change: transform;
 }
 
