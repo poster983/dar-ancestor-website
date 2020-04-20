@@ -6,6 +6,15 @@
     "primaryColor": "#82ccdd",
     "lastUpdated": "Some arbitrary date",
     "analyticsScript":"",
+    "title": "Our Patriotic Ancestors",
+    "subtitle": "This is a subtitle",
+    "home": "../",
+    "mastheadLinks": [
+        {"href": "../", "name": "Home"},
+        {"href": "https://www.dar.org/", "name": "DAR", "newWindow": true},
+        {"href": "https://www.txdar.org/", "name": "TXDAR", "newWindow": true},
+        {"href": "https://txdar.org/membership-2/", "name": "Membership", "newWindow": true}
+    ],
     "states": [{
             "state": "Connecticut",
             "ancestors": [
