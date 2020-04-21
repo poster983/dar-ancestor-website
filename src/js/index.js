@@ -1,17 +1,25 @@
 import "@material/mwc-top-app-bar";
 import "@material/mwc-icon-button";
+import "@material/mwc-button";
+import "@material/mwc-drawer";
+
 import "./elements/ancestor-state-bar";
 import "./elements/ancestor-section";
 import "./elements/ancestor-bottom-bar";
+
 import "../styles/index.css";
 import "../styles/pre-loader.css"
 import {default as config} from "../../ancestor-config.json";
 import {build} from "./build";
 import {setupHero} from "./hero";
+import {buildMasthead} from "./masthead";
 import ScrollMagic from 'scrollmagic';
 
 import * as common from "./common";
 
+//setup masthead 
+
+buildMasthead();
 
 //let ScrollMagic = require("scrollmagic");
 let scroll = new ScrollMagic.Controller();
@@ -23,11 +31,11 @@ let bottomBar = document.getElementById("bottom-bar");
 bottomBar.lastUpdated = config.lastUpdated;
 
 // hide back button on nav 
-let backButton = document.getElementById("back-button");
+/*let backButton = document.getElementById("back-button");
 if(window.history.length<=1 && (config.home == null || config.home == "")) {
 	backButton.style.display = "none";
 	
-}
+}*/
 
 //update nav colors
 let masthead = document.getElementById("masthead");
@@ -62,14 +70,14 @@ function doneLoading() {
 
 
 //Back button navigation 
-backButton.addEventListener("click", () => {
+/*backButton.addEventListener("click", () => {
 	console.log(window.history.length);
 	if(window.history.length >1) {
 		window.history.back();
 	} else {
 		window.location.href = config.home;
 	}
-}, {passive: true})
+}, {passive: true})*/
 
 
 

@@ -12,6 +12,8 @@
     "build": "webpack --config webpack.prod.js"
   },
   "dependencies": {
+    "@material/mwc-button": "^0.14.1",
+    "@material/mwc-drawer": "^0.14.1",
     "@material/mwc-icon-button": "^0.14.1",
     "@material/mwc-top-app-bar": "^0.14.1",
     "animejs": "^3.2.0",
@@ -24,6 +26,7 @@
     "scrollmagic": "^2.0.7",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
     "webpack-merge": "^4.2.2"
   }
 }

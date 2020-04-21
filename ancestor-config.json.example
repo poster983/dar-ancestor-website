@@ -8,9 +8,15 @@
     "analyticsScript":"",
     "title": "Our Patriotic Ancestors",
     "subtitle": "This is a subtitle",
+    "darChapter": "John Mc Nitt",
+    "disclaimer": "Bla Bla Bla",
+    "webmasterEmail": "example@example.com",
     "home": "../",
-    "mastheadLinks": [
+    "mastheadLinks": [ //try and limit yourself to no more than 7 links
         {"href": "../", "name": "Home"},
+        {"href": "../about", "name": "About"},
+        {"href": "../community", "name": "Community"},
+        {"href": "../contact", "name": "Contact"},
         {"href": "https://www.dar.org/", "name": "DAR", "newWindow": true},
         {"href": "https://www.txdar.org/", "name": "TXDAR", "newWindow": true},
         {"href": "https://txdar.org/membership-2/", "name": "Membership", "newWindow": true}

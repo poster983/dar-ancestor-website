@@ -1,6 +1,5 @@
 import "particles.js";
 import {default as particlesConfig} from "./starfield.json";
-console.log(particlesConfig);
 import ScrollMagic from 'scrollmagic';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
 import anime from "animejs";
@@ -9,6 +8,7 @@ import * as common from "./common";
 
 
 let masthead = document.getElementById("masthead");
+let mastheadLinks = document.getElementsByClassName("masthead-links");
 
 
 let paralaxTitles = {
@@ -27,6 +27,7 @@ let paralaxStarfield = {
     direction: 'normal'
 }
 let mastheadColorObj = common.parseRGBHEX(config.primaryColor);
+
 
 let mastheadColor = { //
     targets: mastheadColorObj,
@@ -55,6 +56,11 @@ let mastheadTextColor = {
     update: function() {
         //console.log(mastheadTextColorBase.toRGBA());
         masthead.style.setProperty("--mdc-theme-on-primary", mastheadTextColorBase.toRGBA());
+        for (const element of mastheadLinks) {
+            //console.log(element);
+            element.style.setProperty("--mdc-theme-primary", mastheadTextColorBase.toRGBA());
+            //console.log(element);
+        }
     }
 }
 var heroTimeline = anime.timeline({
