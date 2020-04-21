@@ -94,7 +94,7 @@ ancestor-starfield {
     height: 100vh;
     top: 0px;
     width: 100%;
-    background: rgb(49,19,102);
+    background: rgb(33,33,33);
     background: linear-gradient(176deg, rgba(49,19,102,1) 23%, rgba(33,33,33,1) 54%);
     z-index: -2;
 }

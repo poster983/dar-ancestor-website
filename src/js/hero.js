@@ -74,7 +74,7 @@ heroSub.innerHTML = (config.subtitle)?config.subtitle:"";
 export function setupHero(scrollControl) {
     //starfield
     particlesJS("starfield", particlesConfig);
-    new ScrollMagic.Scene({
+    let scene = new ScrollMagic.Scene({
         duration: "100%", //571-64, // 
         triggerElement: "#hero-trigger",
         triggerHook: 'onCenter',
@@ -85,4 +85,8 @@ export function setupHero(scrollControl) {
 
         })
         .addTo(scrollControl); // assign the scene to the controller
+
+    if (process.env.NODE_ENV == "development") { //if development add indecators
+        scene.addIndicators()
+    }
 }
