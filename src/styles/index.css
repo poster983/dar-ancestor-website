@@ -110,4 +110,9 @@ ancestor-starfield {
     }
 }
 
+/** fix for scroll target */
+[slot="appContent"] {
+    height: 100%;
+    overflow: auto;
+}
 

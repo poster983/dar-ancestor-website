@@ -24,7 +24,7 @@ buildMasthead();
 //let ScrollMagic = require("scrollmagic");
 let scroll = new ScrollMagic.Controller();
 //setup hero animations
-setupHero(scroll);
+
 
 //update last updated
 let bottomBar = document.getElementById("bottom-bar");
@@ -41,6 +41,10 @@ if(window.history.length<=1 && (config.home == null || config.home == "")) {
 let masthead = document.getElementById("masthead");
 masthead.style.setProperty("--mdc-theme-primary", "rgba(0,0,0,0)");
 masthead.style.setProperty("--mdc-theme-on-primary", "rgba(255,255,255,1)");
+
+//set masthead's scroll target
+
+
 /*
 masthead.style.setProperty("--mdc-theme-primary", config.primaryColor);
 masthead.style.setProperty("--mdc-theme-on-primary", common.getTextColor(common.parseRGBHEX(config.primaryColor)));*/
@@ -80,11 +84,16 @@ function doneLoading() {
 }, {passive: true})*/
 
 
+customElements.whenDefined("mwc-drawer").then(() => {
+	setupHero(scroll);
 
+	
+});
 
 
 //call on load
 window.addEventListener('load', function () {
+	const appContent = document.querySelector("[slot=appContent]");
+	document.getElementById("masthead").scrollTarget = appContent;
 	doneLoading();
-
 })

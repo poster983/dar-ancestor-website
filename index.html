@@ -14,6 +14,7 @@
 </head>
 
 <body class="loading">
+
     <div id="pre-loader" class="pre-loader">
         <div class="gooey">
             <span class="dot"></span>
@@ -27,48 +28,52 @@
         <p class="unsupported">Your browser may be unsupported. Please use a modern browser.</p>
     </div>
 
-    <main id="main" class="loading">
+    <mwc-drawer hasHeader type="modal" id="main" class="loading">
+        <span slot="title">Drawer Title</span>
+        <span slot="subtitle">subtitle</span>
+        <div>
+            <p>Drawer content!</p>
+            <mwc-icon-button icon="gesture"></mwc-icon-button>
+            <mwc-icon-button icon="gavel"></mwc-icon-button>
+        </div>
+        <div slot="appContent">
+
+
+            <!--Mast Head-->
+            <mwc-top-app-bar id="masthead">
+                <mwc-icon-button slot="navigationIcon" icon="menu"></mwc-icon-button>
+                <!--<mwc-icon-button icon="arrow_back" slot="navigationIcon" id="back-button"></mwc-icon-button>-->
+                <div slot="title">Our Ancestors</div>
+
+            </mwc-top-app-bar>
+
+
+            <div id="hero-bg"></div>
+            <!--Particles JS container-->
+            <div id="starfield"></div>
+            <div id="hero-trigger"></div>
+            <!--Hero Title-->
+            <div id="hero">
+                <h1 id="hero-title" class="hero-title"></h1>
+                <h2 id="hero-sub" class="hero-sub"></h2>
+                <div id="scroll-indicator">Scroll Down</div>
+            </div>
+
+            <!--Dynamic Ancestor sections-->
+            <div class="sections" id="sections"></div>
+
+            <!--Bottom bar info-->
+            <ancestor-bottom-bar id="bottom-bar"></ancestor-bottom-bar>
+
+        </div>
+    </mwc-drawer>
+
+    
+
+    <!--<main id="main" class="loading">-->
         <!--Nav drawer-->
-        <mwc-drawer hasHeader type="modal">
-            <span slot="title">Drawer Title</span>
-            <span slot="subtitle">subtitle</span>
-            <div>
-                <p>Drawer content!</p>
-                <mwc-icon-button icon="gesture"></mwc-icon-button>
-                <mwc-icon-button icon="gavel"></mwc-icon-button>
-            </div>
-            <div slot="appContent">
-
-
-                <!--Mast Head-->
-                <mwc-top-app-bar id="masthead">
-                    <mwc-icon-button slot="navigationIcon" icon="menu"></mwc-icon-button>
-                    <!--<mwc-icon-button icon="arrow_back" slot="navigationIcon" id="back-button"></mwc-icon-button>-->
-                    <div slot="title">Our Ancestors</div>
-
-                </mwc-top-app-bar>
-
-
-                <div id="hero-bg"></div>
-                <!--Particles JS container-->
-                <div id="starfield"></div>
-                <div id="hero-trigger"></div>
-                <!--Hero Title-->
-                <div id="hero">
-                    <h1 id="hero-title" class="hero-title"></h1>
-                    <h2 id="hero-sub" class="hero-sub"></h2>
-                    <div id="scroll-indicator">Scroll Down</div>
-                </div>
-
-                <!--Dynamic Ancestor sections-->
-                <div class="sections" id="sections"></div>
-
-                <!--Bottom bar info-->
-                <ancestor-bottom-bar id="bottom-bar"></ancestor-bottom-bar>
-
-            </div>
-        </mwc-drawer>
-    </main>
+        
+    <!--</main>-->
 
 
     <script src="./dist/ancestors.bundle.js"></script>

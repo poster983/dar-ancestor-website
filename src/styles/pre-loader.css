@@ -3,10 +3,10 @@ body.loading {
     background-color: black;
     overflow: hidden;
 }
-main {
+mwc-drawer {
     transition: opacity 0.5s;
 }
-main.loading {
+mwc-drawer.loading {
     opacity: 0;
     
 }
