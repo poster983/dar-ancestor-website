@@ -100,14 +100,28 @@ ancestor-starfield {
 }
 
 
-.masthead-links {
-    display: block;
-}
+
 /** Hide links when too small */
+
+
 @media (max-width: 1000px) { 
     .masthead-links {
         display: none;
     }
+    .drawer-icon {
+        display: initial;
+    }
+}
+/**computer*/
+@media (min-width: 1000px) {
+    .masthead-links {
+        display: block;
+    }
+
+    .drawer-icon {
+        display: none;
+    }
+
 }
 
 /** fix for scroll target */

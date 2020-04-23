@@ -3,11 +3,12 @@ import {default as config} from "../../ancestor-config.json";
 
 export function buildMasthead() {
     let masthead = document.getElementById("masthead");
+    let drawer = document.getElementById("main");
 
     // loop through config for links
     for(let x = 0; x < config.mastheadLinks.length; x++) {
         let link = config.mastheadLinks[x];
-
+        /* FIRST BUILD MASTHEAD  */
         //make button
         let button = document.createElement("mwc-button");
 
@@ -35,6 +36,10 @@ export function buildMasthead() {
         }, {passive: true})
 
         masthead.appendChild(button);
+
+        /* THEN BUILD THE SIDE NAV */
+
+
     }
 
     

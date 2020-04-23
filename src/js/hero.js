@@ -76,11 +76,11 @@ heroTitle.innerHTML = config.title;
 let heroSub = document.getElementById("hero-sub");
 heroSub.innerHTML = (config.subtitle)?config.subtitle:"";
 
-
+let scene;
 export function setupHero(scrollControl) {
     //starfield
     particlesJS("starfield", particlesConfig);
-    let scene = new ScrollMagic.Scene({
+    scene = new ScrollMagic.Scene({
         duration: "100%", //571-64, // 
         triggerElement: "#hero-trigger",
         triggerHook: 'onCenter',
@@ -95,4 +95,14 @@ export function setupHero(scrollControl) {
     if (process.env.NODE_ENV == "development") { //if development add indecators
         scene.addIndicators()
     }
+}
+
+/**
+ * Updates masthead colors when loaded
+ */
+export function onLoad() {
+    if(scene.state() === "AFTER") {
+        heroTimeline.seek(heroTimeline.duration);
+    }
+
 }

@@ -4,7 +4,7 @@ import {
 import ScrollMagic from 'scrollmagic';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
 
-
+let stateBarScenes = [];
 
 /**
  * Builds the Page from a json file
@@ -44,11 +44,12 @@ export function build(container, scrollControl) {
         //push to dom
         container.appendChild(barContainer);
         container.appendChild(section);
-
+        
         //add bar to scrollcontrol
         let scene = new ScrollMagic.Scene({
                 duration: () => getDuration(section), //571-64, // 
                 triggerElement: barContainer,
+                offset: -64,
                 triggerHook: 'onLeave',
             })
             .setPin(barContainer, {
@@ -59,7 +60,7 @@ export function build(container, scrollControl) {
         if (process.env.NODE_ENV == "development") { //if development add indecators
             scene.addIndicators()
         }
-
+        stateBarScenes.push(scene);
         barContainer.style.setProperty("position", "relative");
     }
     //fix fixed bug
@@ -70,9 +71,11 @@ export function build(container, scrollControl) {
             element.style.setProperty("position", "relative");
             //console.log(element);
         }
+        
     }, 100)
-
 }
+
+
 
 /**
  * Returns the Duration for a given section
@@ -84,4 +87,18 @@ function getDuration(section) {
     return section.height;
 
 }
-//export default {build};
+
+
+
+let masthead = document.getElementById("masthead");
+
+function updateOffset() {
+    for (const scene of stateBarScenes) {
+        scene.offset(-masthead.clientHeight);
+    }
+}
+
+//Call and update all offsets on a resize 
+
+window.addEventListener('resize', updateOffset);
+

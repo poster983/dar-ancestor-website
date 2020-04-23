@@ -174,6 +174,17 @@
     lit-html "^1.1.2"
     tslib "^1.10.0"
 
+"@material/mwc-top-app-bar-fixed@^0.14.1":
+  version "0.14.1"
+  resolved "https://registry.yarnpkg.com/@material/mwc-top-app-bar-fixed/-/mwc-top-app-bar-fixed-0.14.1.tgz#71942a2e27ee487028bdf19f8890278b5997d8ea"
+  integrity sha512-WKxs6ajW1+ZgtTkFVL0s3w5PvBDMkW1OXDjku9xrt+b3GrQOV7UXIE3LawboPBMuDIBUbq4Kc55TJyAWNmIVdQ==
+  dependencies:
+    "@material/mwc-base" "^0.14.1"
+    "@material/mwc-top-app-bar" "^0.14.1"
+    "@material/top-app-bar" "=6.0.0-canary.35a32aaea.0"
+    lit-element "^2.3.0"
+    tslib "^1.10.0"
+
 "@material/mwc-top-app-bar@^0.14.1":
   version "0.14.1"
   resolved "https://registry.yarnpkg.com/@material/mwc-top-app-bar/-/mwc-top-app-bar-0.14.1.tgz#c559ad813aebfbd077c8a980304aacba5bfd6898"
