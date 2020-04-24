@@ -10,8 +10,8 @@ export function buildMasthead() {
     let drawerSubtitle = document.getElementById("drawer-subtitle");
     // set titles 
     drawerSubtitle.innerHTML = config.title;
-    drawerTitle.innerHTML = config.darChapter;
-    mastheadTitle.innerHTML = config.darChapter
+    drawerTitle.innerHTML = config.organizationName;
+    mastheadTitle.innerHTML = config.organizationName
 
 
     // loop through config for links
