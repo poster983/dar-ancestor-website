@@ -10,7 +10,7 @@
     "title": "Our Patriotic Ancestors",
     "subtitle": "This is a subtitle",
     "disclaimer": "Bla Bla Bla",
-    "webmasterEmail": "example@example.com",
+    "webmasterEmail": "example@example.com?subject=Issue with ancestor page for DAR website.",
     "mastheadLinks": [ //try and limit yourself to no more than 7 links
         {"href": "../", "name": "Home"},
         {"href": "../about", "name": "About"},
