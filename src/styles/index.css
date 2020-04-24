@@ -85,8 +85,8 @@ ancestor-starfield {
 }
 
 #scroll-indicator {
-    position: absolute;
-    top: calc(100vh - 30px);
+    /*position: absolute;
+    top: calc(100vh - 30px);*/
     color: white;
 }
 

@@ -14,19 +14,15 @@ import * as common from "../common";
           :host {
             z-index: 2;
             width: 100%;
+            overflow: hidden;
           }
           .bar {
             width: 100%;
-            height: 40px;
+            /*height: 100%;*/
+            padding-top: 5px;
+            padding-bottom: 5px;
             background-color: var(--ancestor-bottom-bar-background-color, red);
 
-          }
-          .v-center {
-            display: flex;
-            align-items: center;
-            /*justify-content: center;*/
-            height: 100%;
-            position: relative;
           }
           @media (max-width: 600px) {
             .text {
@@ -41,21 +37,24 @@ import * as common from "../common";
             }
           
           #updated {
-            padding-right: 25px;
+            /*padding-right: 25px;
             text-align: right;
             right: 0px;
-            position: absolute;
+            position: absolute;*/
           }
           .text {
             -webkit-font-smoothing: antialiased;
             font-family: 'Roboto', sans-serif;
-          }
-          #attribution {
             padding-left: 25px;
-            text-align: left;
-            
+            padding-right: 25px;
+            padding-bottom: 5px;
+          }          
+          a:visited {
+            color: inherit;
           }
-          
+          a:link {
+            color: inherit;
+          }
           
         `;
       }
@@ -87,8 +86,8 @@ import * as common from "../common";
       let textColor = common.getTextColor(common.parseRGBHEX(bgColor));//set title color
       
         //console.log(textColor)
-        bar.style.color = textColor;
-        attribution.style.color = textColor;
+        this.style.color = textColor;
+        this.style.color = textColor;
     }
   
     /**
@@ -97,6 +96,8 @@ import * as common from "../common";
     static get properties() {
         return { 
             lastUpdated: { type: String },
+            webmasterEmail: {type: String},
+            disclaimer: {type: String}
         };
       }
   
@@ -108,12 +109,22 @@ import * as common from "../common";
       return html`
 
       <div id="bar" class="bar">
-        <div class="v-center">
-            <a href="https://josephhassell.com" class="text" id="attribution">Created with &#x2764; by Joey</a>
+            <div class="text"> <a href="https://josephhassell.com" id="attribution">Created with &#x2764; by Joey</a></div>
             <div id="updated" class="text">Last Updated: ${this.lastUpdated}</div>
+            <!--Webmaster-->
+            ${!(this.webmasterEmail == null || this.webmasterEmail == undefined || this.webmasterEmail == "") ? html`
+              <div class="text">For technical problems with this page, contact <a href="mailto:${this.webmasterEmail}">webmaster</a>.</div>
+            ` : html`<!--No Webmaster-->`}
+            <!--Disclaimer-->
+            ${!(this.disclaimer == null || this.disclaimer == undefined || this.disclaimer == "") ? html`
+              <div class="text">${this.disclaimer}</div>
+            ` : html`<!--No Disclaimer-->`}
+            
+        <!--<div class="v-center">
+          
           
          
-        </div>
+        </div>-->
       </div>
       `;
     }

@@ -71,7 +71,7 @@ export function build(container, scrollControl) {
             element.style.setProperty("position", "relative");
             //console.log(element);
         }
-        
+        updateOffset();
     }, 100)
 }
 

@@ -34,6 +34,8 @@ let scroll = new ScrollMagic.Controller();
 //update last updated
 let bottomBar = document.getElementById("bottom-bar");
 bottomBar.lastUpdated = config.lastUpdated;
+bottomBar.webmasterEmail = config.webmasterEmail;
+bottomBar.disclaimer = config.disclaimer;
 
 
 
@@ -120,15 +122,10 @@ customElements.whenDefined("mwc-drawer").then(() => {
 
 //call on load
 window.addEventListener('load', function () {
-	
+	onHeroLoad();
 	if(reduceMotionSetting == "true") {
 		scroll.destroy(true);
 		reduceHeroMotion();
-
-		
-		
-	} else {
-		onHeroLoad();
 	}
 
 
