@@ -29,6 +29,7 @@ ancestor-starfield {
     width: 100%;
     position: absolute;
     z-index: -1;
+    top: 0px;
 }
 
 #hero {
