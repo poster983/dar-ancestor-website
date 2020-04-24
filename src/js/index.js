@@ -47,7 +47,7 @@ masthead.style.setProperty("--mdc-theme-on-primary", "rgba(255,255,255,1)");
 
 //open nav 
 let drawerButton = document.getElementById("open-drawer");
-let drawer = document.getElementById("main");
+let drawer = document.getElementById("mwc-drawer");
 drawerButton.addEventListener("click", () => {
 	drawer.setAttribute("open", true);
 	

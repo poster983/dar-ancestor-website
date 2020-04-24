@@ -27,63 +27,64 @@
 
         <p class="unsupported">Your browser may be unsupported. Please use a modern browser.</p>
     </div>
+    <main id="main" class="loading">
+        <mwc-drawer hasHeader type="modal" id="mwc-drawer" >
+            <span id="drawer-title" slot="title"></span>
+            <span id="drawer-subtitle" slot="subtitle"></span>
 
-    <mwc-drawer hasHeader type="modal" id="main" class="loading">
-        <span id="drawer-title" slot="title"></span>
-        <span id="drawer-subtitle" slot="subtitle"></span>
-
-        <div class="switch-label reduce-motion-drawer">
-            <mwc-switch id="reduce-motion-drawer"></mwc-switch>
-            <span>Reduce Motion</span>
-        </div>
-        <div>
-            <mwc-list id="drawer-links"></mwc-list>
-        </div>
-        
-        <div slot="appContent">
-
-
-            <!--Mast Head-->
-            <mwc-top-app-bar-fixed id="masthead">
-                <mwc-icon-button class="drawer-icon" id="open-drawer" slot="navigationIcon" icon="menu"></mwc-icon-button>
-               
-                <div id="masthead-title" slot="title">Our Ancestors</div>
-                
-                <div class="switch-label reduce-motion-masthead" slot="actionItems">
-                    <mwc-switch id="reduce-motion"></mwc-switch>
-                    <span>Reduce Motion</span>
-                </div>
-                <!--<mwc-formfield class="reduce-motion-label" label="Reduce Motion" slot="actionItems" id="reduce-motion">
-                    <mwc-switch checked></mwc-switch>
-                </mwc-formfield>-->
-            </mwc-top-app-bar-fixed>
-
-
-            <div id="hero-bg"></div>
-            <!--Particles JS container-->
-            <div id="starfield"></div>
-            <div id="hero-trigger"></div>
-            <!--Hero Title-->
-            <div id="hero">
-                <h1 id="hero-title" class="hero-title"></h1>
-                <h2 id="hero-sub" class="hero-sub"></h2>
-                <div id="scroll-indicator">Scroll Down</div>
+            <div class="switch-label reduce-motion-drawer">
+                <mwc-switch id="reduce-motion-drawer"></mwc-switch>
+                <span>Reduce Motion</span>
+            </div>
+            <div>
+                <mwc-list id="drawer-links"></mwc-list>
             </div>
 
-            <!--Dynamic Ancestor sections-->
-            <div class="sections" id="sections"></div>
+            <div slot="appContent">
 
-            <!--Bottom bar info-->
-            <ancestor-bottom-bar id="bottom-bar"></ancestor-bottom-bar>
 
-        </div>
-    </mwc-drawer>
+                <!--Mast Head-->
+                <mwc-top-app-bar-fixed id="masthead">
+                    <mwc-icon-button class="drawer-icon" id="open-drawer" slot="navigationIcon" icon="menu">
+                    </mwc-icon-button>
 
-    
+                    <div id="masthead-title" slot="title">Our Ancestors</div>
+
+                    <div class="switch-label reduce-motion-masthead" slot="actionItems">
+                        <mwc-switch id="reduce-motion"></mwc-switch>
+                        <span>Reduce Motion</span>
+                    </div>
+                    <!--<mwc-formfield class="reduce-motion-label" label="Reduce Motion" slot="actionItems" id="reduce-motion">
+                    <mwc-switch checked></mwc-switch>
+                </mwc-formfield>-->
+                </mwc-top-app-bar-fixed>
+
+
+                <div id="hero-bg"></div>
+                <!--Particles JS container-->
+                <div id="starfield"></div>
+                <div id="hero-trigger"></div>
+                <!--Hero Title-->
+                <div id="hero">
+                    <h1 id="hero-title" class="hero-title"></h1>
+                    <h2 id="hero-sub" class="hero-sub"></h2>
+                    <div id="scroll-indicator">Scroll Down</div>
+                </div>
+
+                <!--Dynamic Ancestor sections-->
+                <div class="sections" id="sections"></div>
+
+                <!--Bottom bar info-->
+                <ancestor-bottom-bar id="bottom-bar"></ancestor-bottom-bar>
+
+            </div>
+        </mwc-drawer>
+    </main>
+
 
     <!--<main id="main" class="loading">-->
-        <!--Nav drawer-->
-        
+    <!--Nav drawer-->
+
     <!--</main>-->
 
 
