@@ -67,7 +67,12 @@ var heroTimeline = anime.timeline({
     autoplay: false,
 });
 
-heroTimeline.add(paralaxTitles).add(paralaxStarfield,0).add(mastheadColor,0).add(mastheadTextColor,0);
+var colorTimeline = anime.timeline({
+    autoplay: false,
+});
+
+heroTimeline.add(paralaxTitles,0).add(paralaxStarfield,0);
+colorTimeline.add(mastheadColor,0).add(mastheadTextColor,0)
 
 // setup the hero titles
 let heroTitle = document.getElementById("hero-title");
@@ -88,7 +93,7 @@ export function setupHero(scrollControl) {
         //.addIndicators()
         .on("progress", function (event) {
             heroTimeline.seek(heroTimeline.duration * event.progress);
-
+            colorTimeline.seek(colorTimeline.duration * event.progress);
         })
         .addTo(scrollControl); // assign the scene to the controller
 
@@ -103,6 +108,19 @@ export function setupHero(scrollControl) {
 export function onLoad() {
     if(scene.state() === "AFTER") {
         heroTimeline.seek(heroTimeline.duration);
+        colorTimeline.seek(colorTimeline.duration);
     }
 
+}
+
+/**
+ * Resets animations to 0
+ */
+export function reduceMotion() {
+    heroTimeline.seek(1);
+    console.log(colorTimeline.duration)
+
+    colorTimeline.play();
+    //set masthead to correct colors
+    
 }

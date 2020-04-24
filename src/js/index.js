@@ -2,6 +2,11 @@ import "@material/mwc-top-app-bar-fixed";
 import "@material/mwc-icon-button";
 import "@material/mwc-button";
 import "@material/mwc-drawer";
+import '@material/mwc-list/mwc-list.js';
+import '@material/mwc-list/mwc-list-item.js';
+import "@material/mwc-icon";
+import "@material/mwc-formfield";
+import "@material/mwc-switch";
 
 import "./elements/ancestor-state-bar";
 import "./elements/ancestor-section";
@@ -11,7 +16,7 @@ import "../styles/index.css";
 import "../styles/pre-loader.css"
 import {default as config} from "../../ancestor-config.json";
 import {build} from "./build";
-import {setupHero, onLoad as onHeroLoad} from "./hero";
+import {setupHero, onLoad as onHeroLoad, reduceMotion as reduceHeroMotion} from "./hero";
 import {buildMasthead} from "./masthead";
 import ScrollMagic from 'scrollmagic';
 
@@ -47,6 +52,39 @@ drawerButton.addEventListener("click", () => {
 }, {passive: true})
 
 
+//reduce motion toggle
+let reduceMotionNavBar = document.getElementById("reduce-motion");
+let reduceMotionDrawer = document.getElementById("reduce-motion-drawer");
+
+//get setting
+let reduceMotionSetting = localStorage.getItem('reduceMotion')
+console.log(reduceMotionSetting)
+if(reduceMotionSetting == "true") {
+	reduceMotionNavBar.checked = true;
+	reduceMotionDrawer.checked = true;
+}
+
+function handleReduceMotion(event) {
+	reduceMotionNavBar.checked = event.target.checked;
+	reduceMotionDrawer.checked = event.target.checked;
+	if(event.target.checked) {
+		localStorage.setItem('reduceMotion', true);
+		
+		//disable motion
+		scroll.destroy(true);
+		reduceHeroMotion();
+
+	} else {
+		localStorage.setItem('reduceMotion', false);
+		//enable motion 
+		location.reload();
+	}
+}
+//listen for change 
+reduceMotionNavBar.addEventListener("change", handleReduceMotion);
+reduceMotionDrawer.addEventListener("change", handleReduceMotion);
+
+
 bottomBar.style.setProperty("--ancestor-bottom-bar-background-color", config.primaryColor);
 
 //build document
@@ -76,11 +114,23 @@ function doneLoading() {
 
 customElements.whenDefined("mwc-drawer").then(() => {
 	setupHero(scroll);
+	
 });
 
 
 //call on load
 window.addEventListener('load', function () {
-	onHeroLoad();
+	
+	if(reduceMotionSetting == "true") {
+		scroll.destroy(true);
+		reduceHeroMotion();
+
+		
+		
+	} else {
+		onHeroLoad();
+	}
+
+
 	doneLoading();
 })

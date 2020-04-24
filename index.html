@@ -29,13 +29,17 @@
     </div>
 
     <mwc-drawer hasHeader type="modal" id="main" class="loading">
-        <span slot="title">Drawer Title</span>
-        <span slot="subtitle">subtitle</span>
-        <div>
-            <p>Drawer content!</p>
-            <mwc-icon-button icon="gesture"></mwc-icon-button>
-            <mwc-icon-button icon="gavel"></mwc-icon-button>
+        <span id="drawer-title" slot="title"></span>
+        <span id="drawer-subtitle" slot="subtitle"></span>
+
+        <div class="switch-label reduce-motion-drawer">
+            <mwc-switch id="reduce-motion-drawer"></mwc-switch>
+            <span>Reduce Motion</span>
         </div>
+        <div>
+            <mwc-list id="drawer-links"></mwc-list>
+        </div>
+        
         <div slot="appContent">
 
 
@@ -43,8 +47,15 @@
             <mwc-top-app-bar-fixed id="masthead">
                 <mwc-icon-button class="drawer-icon" id="open-drawer" slot="navigationIcon" icon="menu"></mwc-icon-button>
                
-                <div slot="title">Our Ancestors</div>
-
+                <div id="masthead-title" slot="title">Our Ancestors</div>
+                
+                <div class="switch-label reduce-motion-masthead" slot="actionItems">
+                    <mwc-switch id="reduce-motion"></mwc-switch>
+                    <span>Reduce Motion</span>
+                </div>
+                <!--<mwc-formfield class="reduce-motion-label" label="Reduce Motion" slot="actionItems" id="reduce-motion">
+                    <mwc-switch checked></mwc-switch>
+                </mwc-formfield>-->
             </mwc-top-app-bar-fixed>
 
 

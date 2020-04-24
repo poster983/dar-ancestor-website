@@ -7,7 +7,7 @@ mwc-drawer {
     transition: opacity 0.5s;
 }
 mwc-drawer.loading {
-    opacity: 0;
+    opacity: 0 !important;
     
 }
 .pre-loader .unsupported {

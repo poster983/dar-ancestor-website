@@ -2,11 +2,20 @@ import {default as config} from "../../ancestor-config.json";
 
 
 export function buildMasthead() {
-    let masthead = document.getElementById("masthead");
-    let drawer = document.getElementById("main");
+    let mastheadTitle = document.getElementById("masthead-title");
+    
+    let drawerLinks = document.getElementById("drawer-links");
+
+    let drawerTitle = document.getElementById("drawer-title");
+    let drawerSubtitle = document.getElementById("drawer-subtitle");
+    // set titles 
+    drawerSubtitle.innerHTML = config.title;
+    drawerTitle.innerHTML = config.darChapter;
+    mastheadTitle.innerHTML = config.darChapter
+
 
     // loop through config for links
-    for(let x = 0; x < config.mastheadLinks.length; x++) {
+    for(let x = config.mastheadLinks.length-1; x >= 0; x--) {
         let link = config.mastheadLinks[x];
         /* FIRST BUILD MASTHEAD  */
         //make button
@@ -35,10 +44,36 @@ export function buildMasthead() {
             
         }, {passive: true})
 
-        masthead.appendChild(button);
+        mastheadTitle.after(button);
 
         /* THEN BUILD THE SIDE NAV */
 
+        let listItem = document.createElement("mwc-list-item");
+        listItem.classList.add("drawer-link");
+
+        //add link name
+        listItem.innerHTML = link.name;
+
+        //add new window icon
+        if(link.newWindow) {
+            listItem.setAttribute("hasMeta", true);
+            let icon = document.createElement("mwc-icon");
+            icon.setAttribute("slot", "meta");
+            icon.innerHTML = "open_in_new";
+            listItem.appendChild(icon);
+        }
+
+        //set click action
+        listItem.addEventListener("click", () => {
+            if(link.newWindow) {
+                window.open(link.href, '_blank');
+            } else {
+                window.location.href = link.href;
+            }
+            
+        }, {passive: true})
+
+        drawerLinks.prepend(listItem);
 
     }
 
