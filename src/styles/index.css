@@ -139,7 +139,7 @@ mwc-list-item.drawer-link {
 }
 
 /** Hide switch when too small */
-@media (max-width: 400px) { 
+@media (max-width: 600px) { 
     .switch-label.reduce-motion-masthead {
         display: none;
     }
@@ -148,7 +148,7 @@ mwc-list-item.drawer-link {
     }
 }
 /**computer*/
-@media (min-width: 400px) {
+@media (min-width: 600px) {
     .switch-label.reduce-motion-masthead {
         display: initial;
     }
