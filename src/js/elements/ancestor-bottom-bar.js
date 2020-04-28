@@ -109,7 +109,7 @@ import * as common from "../common";
       return html`
 
       <div id="bar" class="bar">
-            <div class="text"> <a href="https://josephhassell.com" id="attribution">Created with &#x2764; by Joey</a></div>
+            <div class="text"> <a href="https://josephhassell.com" id="attribution" target="_blank">Created with &#x2764; by Joey</a></div>
             <div id="updated" class="text">Last Updated: ${this.lastUpdated}</div>
             <!--Webmaster-->
             ${!(this.webmasterEmail == null || this.webmasterEmail == undefined || this.webmasterEmail == "") ? html`
