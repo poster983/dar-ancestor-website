@@ -126,6 +126,12 @@ ancestor-starfield {
 
 }
 
+#masthead-title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 /** fix for scroll target */
 [slot="appContent"] {
     height: 100%;
