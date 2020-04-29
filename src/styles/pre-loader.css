@@ -29,6 +29,9 @@ main.loading {
 .pre-loader.hide {
     opacity: 0;
 }
+.pre-loader.hide-edge {
+    display: none;
+}
 .pre-loader .gooey {
     position: absolute;
     top: 50%;

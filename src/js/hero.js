@@ -1,7 +1,7 @@
 import "particles.js";
 import {default as particlesConfig} from "./starfield.json";
 import ScrollMagic from 'scrollmagic';
-import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
+//import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
 import anime from "animejs";
 import {default as config} from "../../ancestor-config.json";
 import * as common from "./common";
@@ -34,7 +34,7 @@ let mastheadColor = { //
     alpha: ["0", "1"],
     easing: 'linear',
     direction: 'normal',
-    round: 10,
+    round: 100,
     update: function() {
         //console.log(mastheadColorObj.toRGBA());
         masthead.style.setProperty("--mdc-theme-primary", mastheadColorObj.toRGBA());
@@ -97,9 +97,9 @@ export function setupHero(scrollControl) {
         })
         .addTo(scrollControl); // assign the scene to the controller
 
-    if (process.env.NODE_ENV == "development") { //if development add indecators
+    /*if (process.env.NODE_ENV == "development") { //if development add indecators
         scene.addIndicators()
-    }
+    }*/
 }
 
 /**

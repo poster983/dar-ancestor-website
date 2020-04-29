@@ -2,7 +2,7 @@ import {
     default as config
 } from "../../ancestor-config.json"
 import ScrollMagic from 'scrollmagic';
-import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
+//import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
 
 let stateBarScenes = [];
 
@@ -57,9 +57,9 @@ export function build(container, scrollControl) {
             }) // pins the element for the the scene's duration
             .addTo(scrollControl); // assign the scene to the controller
 
-        if (process.env.NODE_ENV == "development") { //if development add indecators
+        /*if (process.env.NODE_ENV == "development") { //if development add indecators
             scene.addIndicators()
-        }
+        }*/
         stateBarScenes.push(scene);
         barContainer.style.setProperty("position", "relative");
     }

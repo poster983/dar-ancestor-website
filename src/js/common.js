@@ -35,7 +35,7 @@ export function parseRGBHEX(color) {
         }
         return new Color(res.red, res.green, res.blue, res.alpha);
     } else {
-        throw new TypeError("\"color\" must be either a rgb or hex string");
+        console.error(new TypeError("\"color\" must be either a rgb or hex string. got: " + color));
     }
 }
 
