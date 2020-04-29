@@ -36,7 +36,6 @@ let mastheadColor = { //
     direction: 'normal',
     round: 100,
     update: function() {
-        //console.log(mastheadColorObj.toRGBA());
         masthead.style.setProperty("--mdc-theme-primary", mastheadColorObj.toRGBA());
     }
 }
@@ -106,12 +105,14 @@ export function setupHero(scrollControl) {
  * Updates masthead colors when loaded
  */
 export function onLoad() {
-    console.log(scene.state())
-    if(scene.state() === "AFTER") {
+    console.log(heroTimeline.duration, colorTimeline.duration, window.scrollY)
+
+    if(window.scrollY >= window.innerHeight) { //not at top.
+        colorTimeline.play();
         heroTimeline.seek(heroTimeline.duration);
-        colorTimeline.seek(colorTimeline.duration);
-        
+        //colorTimeline.seek(colorTimeline.duration);
     }
+
 
 }
 

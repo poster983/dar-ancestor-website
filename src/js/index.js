@@ -39,10 +39,11 @@ bottomBar.disclaimer = config.disclaimer;
 
 
 
-//update nav colors
-let masthead = document.getElementById("masthead");
-masthead.style.setProperty("--mdc-theme-primary", "rgba(0,0,0,0)");
-masthead.style.setProperty("--mdc-theme-on-primary", "rgba(255,255,255,1)");
+
+
+
+
+
 
 
 //open nav 
@@ -97,6 +98,7 @@ function doneLoading() {
 	let body = document.body;
 	let main = document.getElementById("main");
 	let preLoader = document.getElementById("pre-loader");
+	let masthead = document.getElementById("masthead");
 
 	preLoader.classList.add("hide");
 	setTimeout(()=> {
@@ -104,6 +106,14 @@ function doneLoading() {
 		main.classList.remove("loading");
 		preLoader.classList.add("hide-edge");
 		preLoader.innerHTML = null;
+		//make color right
+		if(window.scrollY >= window.innerHeight) { // if not at top
+			masthead.style.setProperty("--mdc-theme-primary", config.primaryColor);
+			masthead.style.setProperty("--mdc-theme-on-primary", common.getTextColor(common.parseRGBHEX(config.primaryColor)));
+		} else {
+			masthead.style.setProperty("--mdc-theme-primary", "rgba(0,0,0,0)");
+			masthead.style.setProperty("--mdc-theme-on-primary", "rgba(255,255,255,1)");
+		}
 	}, 500)
 	
 
@@ -117,13 +127,11 @@ function doneLoading() {
 
 customElements.whenDefined("mwc-drawer").then(() => {
 	setupHero(scroll);
-	
+
 });
 
-
-//call on load
-window.addEventListener('load', function () {
-	onHeroLoad();
+customElements.whenDefined("mwc-top-app-bar-fixed").then(() => {
+	//onHeroLoad();
 	if(reduceMotionSetting == "true") {
 		scroll.destroy(true);
 		reduceHeroMotion();
@@ -131,4 +139,11 @@ window.addEventListener('load', function () {
 
 
 	doneLoading();
-})
+});
+
+
+
+//call on load
+/*window.addEventListener('load', function () {
+	
+})*/

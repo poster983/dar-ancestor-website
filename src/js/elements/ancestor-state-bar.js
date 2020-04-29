@@ -117,7 +117,7 @@ import * as common from "../common";
         <div class="v-center">
           ${this.flagSrc? html`
             <div class="flag-conatiner">
-              <img id="flag" src="${this.flagSrc}">
+              <img id="flag" loading="lazy" src="${this.flagSrc}">
             
             </div>
           `: html `<!--No Flag-->`

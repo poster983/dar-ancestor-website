@@ -138,7 +138,7 @@ export class AncestorSection extends LitElement {
                     ${this.pictures != null? html`
                         ${this.pictures.map((i) => html`
                             <div>
-                                <img class="pictures" alt="" src='${i.src}'>
+                                <img class="pictures" loading="lazy" alt="" src='${i.src}'>
                                 <p class="picture-description">${i.description}</p>
                             </div>
                         `)}
