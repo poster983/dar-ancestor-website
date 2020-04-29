@@ -102,6 +102,7 @@ function doneLoading() {
 	setTimeout(()=> {
 		body.classList.remove("loading");
 		main.classList.remove("loading");
+		preLoader.classList.add("hide-edge");
 		preLoader.innerHTML = null;
 	}, 500)
 	
