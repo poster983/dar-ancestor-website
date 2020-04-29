@@ -6,7 +6,6 @@
   "author": "Joseph Hassell <hi@josephhassell.com>",
   "license": "MIT",
   "private": true,
-  "sideEffects": false,
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "build:dev": "webpack --config webpack.dev.js",
