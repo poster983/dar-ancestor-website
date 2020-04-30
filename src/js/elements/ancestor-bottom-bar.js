@@ -1,7 +1,7 @@
 import {
     LitElement, html, customElement, property, css
   } from 'lit-element';
-  
+  import {unsafeHTML} from "lit-html/directives/unsafe-html";
 import * as common from "../common";
   /**
    * 
@@ -117,7 +117,7 @@ import * as common from "../common";
             ` : html`<!--No Webmaster-->`}
             <!--Disclaimer-->
             ${!(this.disclaimer == null || this.disclaimer == undefined || this.disclaimer == "") ? html`
-              <div class="text">${this.disclaimer}</div>
+              <div class="text">${unsafeHTML(this.disclaimer)}</div>
             ` : html`<!--No Disclaimer-->`}
             
         <!--<div class="v-center">

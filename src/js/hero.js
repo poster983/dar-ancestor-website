@@ -104,7 +104,7 @@ export function setupHero(scrollControl) {
 /**
  * Updates masthead colors when loaded
  */
-export function onLoad() {
+/*export function onLoad() {
     console.log(heroTimeline.duration, colorTimeline.duration, window.scrollY)
 
     if(window.scrollY >= window.innerHeight) { //not at top.
@@ -114,7 +114,7 @@ export function onLoad() {
     }
 
 
-}
+}*/
 
 /**
  * Resets animations to 0

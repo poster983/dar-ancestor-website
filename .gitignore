@@ -95,3 +95,6 @@ ancestor-config.json
 
 #images folder 
 images/
+
+#yarn install
+.yarn/

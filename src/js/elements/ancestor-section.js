@@ -5,6 +5,7 @@ import {
     property,
     css
 } from 'lit-element';
+import {unsafeHTML} from "lit-html/directives/unsafe-html";
 import "./ancestor-names";
 
 
@@ -139,7 +140,7 @@ export class AncestorSection extends LitElement {
                         ${this.pictures.map((i) => html`
                             <div>
                                 <img class="pictures" loading="lazy" alt="" src='${i.src}'>
-                                <p class="picture-description">${i.description}</p>
+                                <p class="picture-description">${unsafeHTML(i.description)}</p>
                             </div>
                         `)}
                     `: html `<!--No Pictures-->`

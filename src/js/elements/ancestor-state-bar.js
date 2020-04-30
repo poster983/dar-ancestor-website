@@ -31,7 +31,7 @@ import * as common from "../common";
             height: 100%;
             position: relative;
           }
-          @media (max-width: 600px) {
+          /*@media (max-width: 600px) {
             .title {
               font-size: 2rem; 
             }
@@ -41,12 +41,13 @@ import * as common from "../common";
               .title {
                 font-size: 1.5rem;
               }
-            }
+            }*/
           
           .title {
             padding-left: 25px;
             -webkit-font-smoothing: antialiased;
             font-family: 'IM Fell English', serif;
+            font-size: 1.5rem;
           }
           .flag-conatiner {
             padding-left: 25px;

@@ -16,11 +16,21 @@ import "../styles/index.css";
 import "../styles/pre-loader.css"
 import {default as config} from "../../ancestor-config.json";
 import {build} from "./build";
-import {setupHero, onLoad as onHeroLoad, reduceMotion as reduceHeroMotion} from "./hero";
+import {setupHero, reduceMotion as reduceHeroMotion} from "./hero";
 import {buildMasthead} from "./masthead";
 import ScrollMagic from 'scrollmagic';
 
 import * as common from "./common";
+
+
+//add analytics to page
+if(config.analyticsScript) {
+	let analytics = document.createElement("div");
+	analytics.innerHTML = config.analyticsScript;
+	document.head.appendChild(analytics);
+}
+
+
 
 //setup masthead 
 
@@ -61,7 +71,7 @@ let reduceMotionDrawer = document.getElementById("reduce-motion-drawer");
 
 //get setting
 let reduceMotionSetting = localStorage.getItem('reduceMotion')
-console.log(reduceMotionSetting)
+
 if(reduceMotionSetting == "true") {
 	reduceMotionNavBar.checked = true;
 	reduceMotionDrawer.checked = true;
