@@ -98,3 +98,4 @@ images/
 
 #yarn install
 .yarn/
+.DS_Store
