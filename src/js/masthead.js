@@ -3,6 +3,8 @@ import {default as config} from "../../ancestor-config.json";
 
 export function buildMasthead() {
     let mastheadTitle = document.getElementById("masthead-title");
+
+    let dropdownContainer = document.getElementById("morph-dropdown");
     
     let drawerLinks = document.getElementById("drawer-links");
 
@@ -22,7 +24,7 @@ export function buildMasthead() {
         let button = document.createElement("mwc-button");
 
         //config button
-        button.setAttribute("slot", "actionItems");
+        //button.setAttribute("slot", "actionItems");
         //button.setAttribute("outlined", true);
         button.style.setProperty("--mdc-theme-primary", "rgb(255,255,255)");
         button.classList.add("masthead-links");
@@ -44,7 +46,7 @@ export function buildMasthead() {
             
         }, {passive: true})
 
-        mastheadTitle.after(button);
+        dropdownContainer.prepend(button);
 
         /* THEN BUILD THE SIDE NAV */
 
@@ -78,4 +80,9 @@ export function buildMasthead() {
     }
 
     
+}
+
+
+function buildDropdown(item) {
+
 }

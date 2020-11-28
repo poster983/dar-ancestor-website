@@ -7,6 +7,9 @@ import '@material/mwc-list/mwc-list-item.js';
 import "@material/mwc-icon";
 import "@material/mwc-switch";
 
+import "morph-dropdown/morph-dropdown.js";
+import "morph-dropdown/morph-dropdown-item.js";
+
 import "./elements/ancestor-state-bar";
 import "./elements/ancestor-section";
 import "./elements/ancestor-bottom-bar";

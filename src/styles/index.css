@@ -70,6 +70,7 @@ ancestor-starfield {
     padding-left: 20px;
     padding-right: 20px;
     will-change: transform;
+    transition: transform 0.1s;
 }
 
 .hero-sub {
