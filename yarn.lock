@@ -2926,8 +2926,8 @@ mkdirp@^0.5.1, mkdirp@^0.5.3:
   dependencies:
     minimist "^1.2.5"
 
-"morph-dropdown@C:\\Users\\josep\\Documents\\GitKraken\\morph-dropdown":
-  version "1.0.0"
+morph-dropdown@/Users/joseph/Documents/Code/GitKraken/morph-dropdown:
+  version "1.0.1"
   dependencies:
     lit-element "^2.3.0"
 

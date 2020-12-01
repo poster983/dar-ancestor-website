@@ -24,6 +24,23 @@ ancestor-starfield {
     height: 100%;
 }
 
+morph-dropdown {
+    --morph-dropdown-background: #121212;
+}
+
+.masthead-dropdown-links > a {
+    color: white;
+    text-decoration: none;
+
+}
+.masthead-dropdown-links > a > mwc-list-item {
+    color: white;
+}
+.masthead-dropdown-links > a > mwc-list-item > mwc-icon {
+    color: white;
+}
+
+
 #starfield {
     height: 150vh;
     width: 100%;
