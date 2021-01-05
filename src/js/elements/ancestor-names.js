@@ -1,7 +1,7 @@
 import {
     LitElement, html, customElement, property, css
   } from 'lit-element';
-  
+  import {unsafeHTML} from "lit-html/directives/unsafe-html";
 
   export class AncestorNames extends LitElement {
     static get styles() {
@@ -39,7 +39,7 @@ import {
       return html`
      
         ${this.names != null? html`
-              ${this.names.map((i) => html`<p>${i}</p>`)}
+              ${this.names.map((i) => html`<p>${unsafeHTML(i)}</p>`)}
           `: html `<!--No names-->`
           }
       `;
