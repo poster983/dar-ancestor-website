@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/poster983/dar-ancestor-website.git",
-  "author": "Joseph Hassell <hi@josephhassell.com>",
+  "author": "Joseph Hassell <joseph@hassell.dev>",
   "license": "MIT",
   "private": true,
   "scripts": {
