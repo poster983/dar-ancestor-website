@@ -24,17 +24,106 @@ export function buildMasthead() {
         let link = config.mastheadLinks[x];
 
         /* FIRST BUILD MASTHEAD  */
-        if (link.dropdown != null) {
-            buildDropdown(link);
-        } else {
-            buildButton(link);
-        }
-        
-
-
         /* THEN BUILD THE SIDE NAV */
+        if (link.dropdown != null) {
+            buildMastheadDropdown(link);
+            buildSideNavDropdown(link)
+        } else {
+            buildMastheadButton(link);
+            buildSideNavButton(link);
+        }
+    }
 
-        let listItem = document.createElement("mwc-list-item");
+
+}
+
+
+/*function buildSideNavDropdown(item) {
+
+    let container = document.createElement("morph-dropdown-item");
+    let list = document.createElement("mwc-list");
+
+    let listItem = document.createElement("mwc-list-item");
+    listItem.classList.add("drawer-link");
+
+    listItem.setAttribute("slot", "button");
+    list.setAttribute("slot", "dropdown");
+    
+
+    //add link name
+    listItem.innerHTML = item.name;
+
+
+    item.dropdown.forEach(element => {
+        if(element.href == null) {
+            console.error("Dropdown children must have an href property")
+            throw new TypeError("Dropdown children must have an href property");
+        }
+        let link = document.createElement("a");
+        link.href = element.href;
+        
+        let listItemSub = document.createElement("mwc-list-item");
+        listItemSub.innerHTML = element.name;
+        
+        if(element.newWindow) {
+            link.target = "_blank";
+            listItemSub.setAttribute("hasMeta", true);
+            let icon = document.createElement("mwc-icon");
+            icon.setAttribute("slot", "meta");
+            icon.innerHTML = "open_in_new";
+            listItemSub.appendChild(icon);
+        }
+
+        link.append(listItemSub);
+        list.append(link);
+        
+    });
+    container.append(listItem);
+    container.append(list);
+    drawerLinks.prepend(container);
+
+}*/
+function buildSideNavDropdown(item) {
+
+
+    let container = document.createElement("mwc-list-dropdown");
+
+    container.setAttribute("label", item.name)
+
+
+    item.dropdown.forEach(element => {
+        if(element.href == null) {
+            console.error("Dropdown children must have an href property")
+            throw new TypeError("Dropdown children must have an href property");
+        }
+        let link = document.createElement("a");
+        link.href = element.href;
+        
+        let listItemSub = document.createElement("mwc-list-item");
+        listItemSub.innerHTML = element.name;
+        
+        if(element.newWindow) {
+            link.target = "_blank";
+            listItemSub.setAttribute("hasMeta", true);
+            let icon = document.createElement("mwc-icon");
+            icon.setAttribute("slot", "meta");
+            icon.innerHTML = "open_in_new";
+            listItemSub.appendChild(icon);
+        }
+
+        link.append(listItemSub);
+        container.append(link);
+        
+    });
+    drawerLinks.prepend(container);
+
+}
+
+function buildSideNavButton(link) {
+    let container = document.createElement("morph-dropdown-item");
+    let list = document.createElement("mwc-list");
+
+    let listItem = document.createElement("mwc-list-item");
         listItem.classList.add("drawer-link");
 
         //add link name
@@ -62,14 +151,11 @@ export function buildMasthead() {
         })
 
         drawerLinks.prepend(listItem);
-
-    }
-
-
 }
 
 
-function buildButton(link) {
+
+function buildMastheadButton(link) {
     //make button
     let button = document.createElement("mwc-button");
 
@@ -107,7 +193,7 @@ function buildButton(link) {
  * @param {Object[]} item.dropdown
  * @param {String} item.name
  */
-function buildDropdown(item) {
+function buildMastheadDropdown(item) {
     
     let container = document.createElement("morph-dropdown-item");
     let button = document.createElement("mwc-button");

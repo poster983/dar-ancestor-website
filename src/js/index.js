@@ -13,6 +13,7 @@ import "morph-dropdown/morph-dropdown-item.js";
 import "./elements/ancestor-state-bar";
 import "./elements/ancestor-section";
 import "./elements/ancestor-bottom-bar";
+import "./elements/mwc-list-dropdown";
 
 import "../styles/index.css";
 import "../styles/pre-loader.css"
@@ -138,7 +139,11 @@ function doneLoading() {
 
 
 customElements.whenDefined("mwc-drawer").then(() => {
-	setupHero(scroll);
+	//gotta love javascript on safari for these dirty hasks 
+	setTimeout(() =>{
+		setupHero(scroll);
+	},0.1)
+	
 
 });
 
