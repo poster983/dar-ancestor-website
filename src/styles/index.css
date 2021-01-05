@@ -127,7 +127,7 @@ mwc-list-dropdown a{
 /** Hide links when too small */
 
 
-@media (max-width: 1100px) { 
+@media (max-width: 1400px) { 
     .masthead-links {
         display: none;
     }
@@ -136,7 +136,7 @@ mwc-list-dropdown a{
     }
 }
 /**computer*/
-@media (min-width: 1100px) {
+@media (min-width: 1400px) {
     .masthead-links {
         display: block;
     }
@@ -166,7 +166,7 @@ mwc-list-item.drawer-link {
 }
 
 /** Hide switch when too small */
-@media (max-width: 600px) { 
+@media (max-width: 700px) { 
     .switch-label.reduce-motion-masthead {
         display: none;
     }
@@ -175,7 +175,7 @@ mwc-list-item.drawer-link {
     }
 }
 /**computer*/
-@media (min-width: 600px) {
+@media (min-width: 700px) {
     .switch-label.reduce-motion-masthead {
         display: initial;
     }
