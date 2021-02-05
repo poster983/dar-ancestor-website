@@ -5,7 +5,7 @@
 {
     "primaryColor": "#82ccdd",
     "lastUpdated": "Some arbitrary date",
-    "analyticsScript":"",
+    "customScript":"",
     "organizationName": "Some Chapter name here",
     "title": "Our Patriotic Ancestors",
     "subtitle": "This is a subtitle",

@@ -26,13 +26,24 @@ import ScrollMagic from 'scrollmagic';
 import * as common from "./common";
 
 
-//add analytics to page
-if(config.analyticsScript) {
-	let analytics = document.createElement("div");
-	analytics.innerHTML = config.analyticsScript;
-	document.head.appendChild(analytics);
+
+
+function htmlToElements(html) {
+    var template = document.createElement('template');
+    template.innerHTML = html;
+    return template.content.childNodes;
 }
 
+//add analytics to page
+if(config.analyticsScript || config.customScript) {
+	let script = (config.customScript)?config.customScript:config.analyticsScript
+	let customScriptElements = htmlToElements(script);
+	console.log(customScriptElements)
+	customScriptElements.forEach((elm) => {
+		document.body.appendChild(elm);
+	})
+	
+}
 
 
 //setup masthead 
