@@ -113,7 +113,7 @@ import * as common from "../common";
             <div id="updated" class="text">Last Updated: ${this.lastUpdated}</div>
             <!--Webmaster-->
             ${!(this.webmasterEmail == null || this.webmasterEmail == undefined || this.webmasterEmail == "") ? html`
-              <div class="text">For technical problems with this page, contact <a href="mailto:${this.webmasterEmail}">webmaster</a>.</div>
+              <div class="text">For technical problems with this page, contact the <a href="mailto:${this.webmasterEmail}">webmaster</a>.</div>
             ` : html`<!--No Webmaster-->`}
             <!--Disclaimer-->
             ${!(this.disclaimer == null || this.disclaimer == undefined || this.disclaimer == "") ? html`
